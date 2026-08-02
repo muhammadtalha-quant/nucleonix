@@ -1,3 +1,7 @@
+{
+    pkgs,
+    ...
+}:
 let
     options = import ./opts.nix;
     keymap = import ./keymap.nix;
@@ -23,6 +27,10 @@ in
                 luaConfigRC = {
                     lualine = luaConfigRCLualine;
                 };
+                extraPackages = [
+                    pkgs.fzf
+                    pkgs.ripgrep
+                ];
                 opts = options;
                 keymaps = keymap;
                 theme = uiTheme;
