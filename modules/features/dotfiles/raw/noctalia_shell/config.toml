@@ -320,7 +320,7 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
+        show_unlock_hint = true
         show_session_buttons = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
@@ -344,7 +344,7 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = false
-        show_password_hint = true
+        show_unlock_hint = true
         show_session_buttons = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
@@ -368,7 +368,7 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
+        show_unlock_hint = true
         show_session_buttons = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
@@ -409,9 +409,7 @@ widget_order = [
         clock_style = "digital"
         color = "on_surface"
         font_family = "DejaVu Serif"
-        forecast_days = 3
         format = "{:%b %d, %Y}"
-        show_forecast = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
     box_height = 98.0703125
