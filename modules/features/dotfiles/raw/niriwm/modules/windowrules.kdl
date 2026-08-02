@@ -1,0 +1,28 @@
+window-rule {
+    match app-id="kitty"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="google-chrome"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="localsend_app"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="obsidian"
+    open-maximized true
+}
+window-rule {
+  geometry-corner-radius 20
+
+  background-effect {
+    blur true
+    xray false
+  }
+  clip-to-geometry true
+}
