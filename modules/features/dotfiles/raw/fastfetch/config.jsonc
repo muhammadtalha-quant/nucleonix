@@ -1,0 +1,139 @@
+{
+   "logo":{
+      "type":"auto",
+      "source":"nixos",
+      "padding":{
+         "left":3
+      }
+   },
+   "display":{
+      "separator":" ",
+      "constants":[
+        "\u001b[38;2;251;241;199m\u001B[1m",
+        "\u001b[38;2;235;219;178m\u001B[1m",
+        "\u001b[38;2;213;196;161m\u001B[1m",
+        "\u001b[38;2;189;174;147m\u001B[1m",
+        "\u001b[38;2;168;153;132m\u001B[1m",
+        "\u001b[38;2;250;189;47m\u001B[1m",
+        "\u001b[38;2;215;153;33m\u001B[1m",
+        "\u001b[38;2;184;187;38m\u001B[1m",
+        "\u001b[38;2;152;151;26m\u001B[1m",
+        "\u001b[38;2;131;165;152m\u001B[1m",
+         "┌──────",
+         "───────",
+         "──────┐"
+      ],
+      "percent":{
+         "type":9,
+         "color":{
+            "green":"#51bcfe",
+            "yellow":"#abff4a",
+            "red":"#ff8f45"
+         }
+      }
+   },
+   "modules":[
+      "break",
+      {
+         "type":"custom",
+         "format":"{$1}{$11}{$2}{$12}{$3}{$12}{$4}{$12}{$5}{$12}{$6}{$12}{$7}{$12}{$8}{$12}{$9}{$12}{$10}{$13}"
+      },
+      {
+         "type":"host",
+         "key":"{$1}├   PC        "
+      },
+      {
+         "type":"cpu",
+         "key":"{$3}├   CPU       "
+      },
+      {
+         "type":"gpu",
+         "key":"{$4}├ 󰾲  GPU       "
+      },
+      {
+         "type":"display",
+         "key":"{$5}├ 󰍹  Display   "
+      },
+      {
+         "type":"memory",
+         "key":"{$7}├   Memory    ",
+         "percent":{
+            "type":3,
+            "green":30,
+            "yellow":70
+         }
+      },
+      {
+         "type":"swap",
+         "key":"{$8}├ 󰯍  Swap      ",
+         "percent":{
+            "type":3,
+            "green":30,
+            "yellow":70
+         }
+      },
+      {
+         "type":"disk",
+         "key":"{$9}├   NixOS     ",
+         "folders":[
+            "/"
+         ],
+         "percent":{
+            "type":3,
+            "green":30,
+            "yellow":70
+         }
+      },
+      {
+         "type":"custom",
+         "format":"{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$12}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13}"
+      },
+      {
+         "type":"os",
+         "key":"{$10}├   Distro    ",
+         "format":"{3}"
+      },
+      {
+         "type":"kernel",
+         "key":"{$10}├   Kernel    "
+      },
+      {
+         "type":"packages",
+         "key":"{$9}├ 󰏖  Packages  "
+      },
+      {
+         "type":"shell",
+         "key":"{$8}├   Shell     "
+      },
+      {
+         "type":"terminal",
+         "key":"{$7}├   Terminal  "
+      },
+      {
+         "type":"lm",
+         "key":"{$4}├ 󰧨  Login     "
+      },
+      {
+         "type":"wm",
+         "key":"{$3}├   Window    "
+      },
+      {
+         "type":"custom",
+         "format":"{$10}{$11}{$9}{$12}{$8}{$12}{$7}{$12}{$6}{$12}{$5}{$12}{$4}{$12}{$3}{$12}{$2}{$12}{$1}{$13}"
+      },
+      {
+         "key":"{$6}├   OS Age    ",
+         "type":"disk",
+         "folders":"/",
+         "format":"{create-time:10} ({days} days)"
+      },
+      {
+         "type":"uptime",
+         "key":"{$3}└   Uptime    "
+      },
+      {
+         "type":"custom",
+         "format":"                {$10}󱄅 {$9}󱄅 {$8}󱄅 {$7}󱄅 {$6}󱄅 {$5}󱄅 {$4}󱄅 {$3}󱄅 {$2}󱄅 {$1}󱄅"
+      }
+   ]
+}

@@ -1,0 +1,27 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            options "compose:ralt"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+
+}
+
+
+cursor {
+    xcursor-theme "Capitaine Cursors (Gruvbox)"
+    xcursor-size 28
+}

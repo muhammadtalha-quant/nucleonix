@@ -1,0 +1,38 @@
+spawn-at-startup "noctalia"
+
+blur {
+  passes 2        
+  offset 3.0      
+  noise 0.03      
+  saturation 1.0  
+}
+
+debug {
+  honor-xdg-activation-with-invalid-serial
+}
+
+layout {
+    gaps 16
+
+    center-focused-column "never"
+
+}
+
+switch-events {
+    lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+
+
+include "noctalia.kdl"
+include "modules/keybinds.kdl"
+include "modules/inputs.kdl"
+include "modules/monitors.kdl"
+include "modules/layerrules.kdl"
+include "modules/windowrules.kdl"
