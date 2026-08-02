@@ -32,7 +32,7 @@
     }
 
     {
-        key = "<leader>qq";
+        key = "<leader>Q";
         mode = "n";
         action = "<cmd>wqa!<CR>";
         desc = "Close Neovim";
