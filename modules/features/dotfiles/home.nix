@@ -26,7 +26,6 @@
         username = userName;
         homeDirectory = "/home/${userName}";
         packages = with pkgs; [
-            localsend
             google-chrome
             wl-clipboard
             ouch

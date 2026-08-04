@@ -27,16 +27,10 @@
     {
         key = "<leader>q";
         mode = "n";
-        action = "<cmd>wqa<CR>";
-        desc = "Close Neovim (changes are saved !)";
+        action = "<cmd>q<CR>";
+        desc = "Close Buffer/Neovim ";
     }
 
-    {
-        key = "<leader>Q";
-        mode = "n";
-        action = "<cmd>wqa!<CR>";
-        desc = "Close Neovim";
-    }
     {
         key = "<Esc>";
         mode = "n";
@@ -82,6 +76,13 @@
         desc = "Force delete buffer";
     }
     {
+        key = "<leader>gf";
+        mode = "n";
+        action = "<cmd>GrugFar<CR>";
+        desc = "Find and Replace in Directory";
+    }
+
+    {
         key = "<leader>bn";
         mode = "n";
         action = "<cmd>bn<CR>";
@@ -92,6 +93,12 @@
         mode = "n";
         action = "<cmd>bp<CR>";
         desc = "Previous buffer";
+    }
+    {
+        key = "<leader>bf";
+        mode = "n";
+        action = "<cmd>GrugFarWithin<CR>";
+        desc = "Find and Replace In Focused Buffer";
     }
     {
         key = "<C-Right>";

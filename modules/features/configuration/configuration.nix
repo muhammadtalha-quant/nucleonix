@@ -37,7 +37,6 @@
         _7zz
         file
         gcc
-        fzf
         tmux
         seahorse
     ];
