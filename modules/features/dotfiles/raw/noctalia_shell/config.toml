@@ -15,7 +15,7 @@ enabled = true
 tint_intensity = 0.26999998092651367
 
 [bar]
-order = [ "default", "sessions" ]
+order = [ "default" ]
 
     [bar.default]
     auto_hide = false
@@ -60,47 +60,6 @@ order = [ "default", "sessions" ]
     widget_spacing = 6
 
         [bar.default.dead_zone]
-
-    [bar.sessions]
-    auto_hide = true
-    background_opacity = 0.84999996423721313
-    border = "outline"
-    border_width = 0.0
-    capsule = false
-    capsule_fill = "surface_variant"
-    capsule_group = []
-    capsule_opacity = 1.0
-    capsule_padding = 6.0
-    capsule_thickness = 0.75999999046325684
-    center = []
-    concave_edge_corners = true
-    contact_shadow = false
-    enabled = true
-    end = []
-    font_weight = 500
-    hover_highlight = true
-    layer = "top"
-    margin_edge = 0
-    margin_ends = 286
-    margin_opposite_edge = 0
-    padding = 14
-    panel_overlap = 1
-    position = "right"
-    radius = 12
-    radius_bottom_left = 12
-    radius_bottom_right = 12
-    radius_top_left = 12
-    radius_top_right = 12
-    reserve_space = false
-    scale = 1.75
-    shadow = true
-    show_on_workspace_switch = false
-    smart_auto_hide = false
-    start = [ "lock", "sleep", "reboot", "poweroff" ]
-    thickness = 46
-    widget_spacing = 6
-
-        [bar.sessions.dead_zone]
 
 [battery]
 warning_threshold = 10
@@ -320,8 +279,8 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_unlock_hint = true
         show_session_buttons = true
+        show_unlock_hint = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 113.265625
@@ -344,8 +303,8 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = false
-        show_unlock_hint = true
         show_session_buttons = true
+        show_unlock_hint = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
     box_height = 213.0
@@ -368,8 +327,8 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_unlock_hint = true
         show_session_buttons = true
+        show_unlock_hint = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 116.25
@@ -655,51 +614,36 @@ time_format = "{:%H:%M}"
 
         [[shell.session.actions]]
         action = "lock"
-        command = ""
         countdown_seconds = 0.0
         enabled = false
-        glyph = ""
-        label = ""
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = true
         shortcut = "1"
         variant = "default"
 
         [[shell.session.actions]]
         action = "logout"
-        command = ""
         countdown_seconds = 0.0
         enabled = true
-        glyph = ""
-        label = ""
         shortcut = "2"
         variant = "default"
 
         [[shell.session.actions]]
-        action = "lock_and_suspend"
-        command = ""
-        countdown_seconds = 0.0
-        enabled = false
-        glyph = ""
-        label = ""
-        shortcut = "3"
-        variant = "default"
-
-        [[shell.session.actions]]
         action = "reboot"
-        command = ""
         countdown_seconds = 0.0
         enabled = true
-        glyph = ""
-        label = ""
         shortcut = "3"
         variant = "default"
 
         [[shell.session.actions]]
         action = "shutdown"
-        command = ""
         countdown_seconds = 0.0
         enabled = true
-        glyph = ""
-        label = ""
         shortcut = "4"
         variant = "destructive"
 
@@ -779,6 +723,15 @@ transition_on_startup = false
     interval_seconds = 1800
     order = "random"
     recursive = true
+
+    [wallpaper.default]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/after_school_stroll_gruvbox.png"
+
+    [wallpaper.last]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/after_school_stroll_gruvbox.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/after_school_stroll_gruvbox.png"
 
 [weather]
 effects = true

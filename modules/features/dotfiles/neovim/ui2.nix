@@ -5,7 +5,6 @@
         enable = true;
         navbuddy.enable = true;
     };
-    fastaction.enable = true;
     ui2 = {
         enable = true;
         setupOpts = {

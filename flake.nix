@@ -43,6 +43,7 @@
             hostName = "hp-probook-430g2";
             timeZone = "Asia/Karachi";
             locale = "en_US.UTF-8";
+            hashedPassword = "$y$j9T$hbguh04FZh1JSM8nYVXS0.$9yG.bzlFyYT2NcDEKwxPmZuyN1Cz91DMpyewyfQAyM5";
 
             # !=== FLAKE CONFIG ===!
             system = "x86_64-linux";
@@ -78,12 +79,20 @@
                 "zathura"
                 "lazygit"
             ];
+            # !=== SYNCTHING CONFIG ===!
+            deviceID = "LOW22KC-L5DK2J5-YXUJ7PZ-DDLGDU6-2IRP4EL-TJMBHPS-MB26DGN-N3X73AF";
         in
         {
+
+            diskoConfigurations.${hostName} = import ./modules/common/disko.nix {
+                inherit storageDevice;
+                inherit swapSize;
+            };
             nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = {
                     inherit userName;
+                    inherit hashedPassword;
                     inherit realName; # for user desc
                     inherit hostName;
                     inherit timeZone;
@@ -91,6 +100,7 @@
                     inherit storageDevice;
                     inherit locale;
                     inherit swapSize;
+                    inherit deviceID;
                     inherit pkgs-unstable;
                     inherit disabledOSTargets;
                     inherit inputs;

@@ -1,4 +1,9 @@
 {
+    userName,
+    deviceID,
+    ...
+}:
+{
     services = {
         power-profiles-daemon.enable = true;
         upower.enable = true;
@@ -14,5 +19,27 @@
         displayManager.ly.enable = true;
         libinput.enable = true;
         pcscd.enable = true;
+        syncthing = {
+            enable = true;
+            dataDir = "/home/${userName}/";
+            user = userName;
+            openDefaultPorts = true;
+            overrideFolders = true;
+            group = "users";
+            settings = {
+                folders = {
+                    "/home/${userName}/sync" = {
+                        enable = true;
+                        id = "sync";
+                        devices = [ "myphone" ];
+                    };
+                };
+                devices = {
+                    myphone.id = deviceID;
+                    myphone.addresses = [ "dynamic" ];
+                };
+            };
+
+        };
     };
 }
