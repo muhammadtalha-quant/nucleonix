@@ -159,4 +159,6 @@ nixos-install --flake .#host --no-root-passwd
 > [!CAUTION]
 > The above steps will only work for me. If you want to reproduce my exact
 > system, you should definitely read the
-> [**documentation**](https://github.com/muhammadtalha-quant/nucleus-template/blob/main/README.md).
+> [**documentation**](https://github.com/muhammadtalha-quant/nucleus-template/blob/main/README.md)
+> of my
+> [**nucleus architecture**](https://github.com/muhammadtalha-quant/nucleus-template)
