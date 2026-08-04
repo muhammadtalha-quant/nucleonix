@@ -155,3 +155,8 @@ nixos-generate-config --root . --dir modules/hosts/host/ --no-filesystems
 rm modules/hosts/host/configuration.nix
 nixos-install --flake .#host --no-root-passwd
 ```
+
+> [!CAUTION]
+> The above steps will only work for me. If you want to reproduce my exact
+> system, you should definitely read the
+> [**documentation**](https://github.com/muhammadtalha-quant/nucleus-template/blob/main/README.md).
