@@ -32,6 +32,7 @@
     environment.systemPackages = with pkgs; [
         neovim-unwrapped
         nix-output-monitor
+        xwayland-satellite
         zip
         unzip
         _7zz
