@@ -162,3 +162,7 @@ nixos-install --flake .#host --no-root-passwd
 > [**documentation**](https://github.com/muhammadtalha-quant/nucleus-template/blob/main/README.md)
 > of my
 > [**nucleus architecture**](https://github.com/muhammadtalha-quant/nucleus-template)
+
+## LICENSE
+
+MIT
