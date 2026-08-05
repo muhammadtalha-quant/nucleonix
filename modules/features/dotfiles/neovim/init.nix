@@ -1,5 +1,6 @@
 {
     pkgs,
+    nvfLib,
     ...
 }:
 let
@@ -9,6 +10,7 @@ let
     utils = import ./utils.nix;
     uiTheme = import ./theme.nix;
     ui2 = import ./ui2.nix;
+    lspConfig = import ./lspconfig.nix;
     pluginDashboard = import ./plugins/dashboard.nix;
     pluginVisual = import ./plugins/visuals.nix;
     pluginToggleTerm = import ./plugins/toggleterm.nix;
@@ -16,7 +18,11 @@ let
     pluginBlink = import ./plugins/blink.nix;
     pluginDiagnostics = import ./plugins/diagnostics.nix;
     pluginLualine = import ./plugins/lualine.nix;
-    luaConfigRCLualine = import ./luaConfigRC/lualine.nix;
+    pluginWhichKey = import ./plugins/whichkey.nix;
+    pluginTODO = import ./plugins/todo.nix;
+    pluginGitSigns = import ./plugins/gitsigns.nix;
+    luaConfigRCLualine = import ./luaConfigRC/lualineRC.nix;
+    luaConfigRCBlink = import ./luaConfigRC/blinkRC.nix;
 in
 {
     programs.nvf = {
@@ -26,6 +32,7 @@ in
             vim = {
                 luaConfigRC = {
                     lualine = luaConfigRCLualine;
+                    blink-cmp = nvfLib.dag.entryAfter [ "autocomplete" ] luaConfigRCBlink;
                 };
                 extraPackages = [
                     pkgs.fzf
@@ -38,17 +45,17 @@ in
                 terminal.toggleterm = pluginToggleTerm;
                 dashboard.dashboard-nvim = pluginDashboard;
                 diagnostics = pluginDiagnostics;
-                git.enable = true;
-                binds.whichKey.enable = true;
+                binds.whichKey = pluginWhichKey;
+                git.gitsigns = pluginGitSigns;
                 ui = ui2;
-                lsp = {
+                lsp = lspConfig;
+                debugger.nvim-dap = {
                     enable = true;
-                    formatOnSave = true;
+                    ui.enable = true;
                 };
-                debugger.nvim-dap.enable = true;
                 languages = langs;
                 visuals = pluginVisual;
-                notes.todo-comments.enable = true;
+                notes.todo-comments = pluginTODO;
                 clipboard = {
                     enable = true;
                     providers.wl-copy.enable = true;

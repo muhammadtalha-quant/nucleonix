@@ -1,34 +1,40 @@
 {
     enable = true;
-    setupOpts.keymap = {
-        preset = "none";
 
-        "<Tab>" = [
-            "select_next"
-            "snippet_forward"
-            "fallback"
-        ];
+    friendly-snippets.enable = true;
 
-        "<S-Tab>" = [
-            "select_prev"
-            "snippet_backward"
-            "fallback"
-        ];
+    sourcePlugins = {
+        spell.enable = true;
+    };
 
-        "<CR>" = [
-            "accept"
-            "fallback"
-        ];
+    setupOpts = {
 
-        "<C-Space>" = [
-            "show"
-            "show_documentation"
-            "hide_documentation"
-        ];
+        keymap = {
+            preset = "super-tab";
+        };
 
-        "<C-e>" = [
-            "hide"
-            "fallback"
-        ];
+        sources = {
+            default = [
+                "lsp"
+                "path"
+                "snippets"
+                "buffer"
+                "spell"
+            ];
+        };
+
+        fuzzy = {
+            implementation = "prefer_rust";
+        };
+
+        completion = {
+            documentation = {
+                auto_show = true;
+                auto_show_delay_ms = 150;
+            };
+            menu = {
+                auto_show = true;
+            };
+        };
     };
 }

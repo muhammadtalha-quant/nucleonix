@@ -33,6 +33,7 @@
             nixpkgs,
             nixpkgs-unstable,
             homeManager,
+            nvf,
             disko,
             stylix,
             ...
@@ -47,8 +48,6 @@
 
             # !=== FLAKE CONFIG ===!
             system = "x86_64-linux";
-            # must match nixpkgs.hostPlatform = lib.mkDefault "<<arch>>";
-            # from hardware-configuration.nix
             pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
             # !=== USER CONFIG ===!
@@ -71,12 +70,12 @@
                 "kitty"
                 "btop"
                 "yazi"
+                "zellij"
                 "nvf"
                 "bat"
                 "tmux"
                 "starship"
                 "cava"
-                "zathura"
                 "lazygit"
             ];
             # !=== SYNCTHING CONFIG ===!
@@ -121,6 +120,7 @@
                                 inherit realName;
                                 inherit gpgKey;
                                 inherit disabledHMTargets;
+                                nvfLib = nvf.lib.nvim;
                                 inherit pkgs-unstable;
                                 inherit emailAddress;
                             };

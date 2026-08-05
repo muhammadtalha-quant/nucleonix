@@ -14,7 +14,6 @@
             package = pkgs-unstable.noctalia;
             settings = ../raw/noctalia_shell/config.toml;
         };
-        zathura.enable = true;
         cava.enable = true;
         btop.enable = true;
         satty.enable = true;

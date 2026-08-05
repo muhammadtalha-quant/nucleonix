@@ -24,7 +24,7 @@ order = [ "default" ]
     border_width = 0.0
     capsule = true
     capsule_border = "outline"
-    capsule_fill = "#A46E26"
+    capsule_fill = "on_primary"
     capsule_group = []
     capsule_opacity = 0.70999997854232788
     capsule_padding = 6.0
@@ -55,7 +55,7 @@ order = [ "default" ]
     shadow = true
     show_on_workspace_switch = true
     smart_auto_hide = false
-    start = [ "workspaces", "date", "weather" ]
+    start = [ "workspaces", "weather" ]
     thickness = 35
     widget_spacing = 6
 
@@ -76,9 +76,9 @@ refresh_minutes = 15
 
 [control_center]
 hidden_tabs = []
-sidebar = "full"
-sidebar_section = "full"
-width = 900
+sidebar = "compact"
+sidebar_section = "compact"
+width = 700
 
     [control_center.calendar]
     event_date_format = "%A %e %B"
@@ -161,7 +161,7 @@ rebooting = []
 session_locked = []
 session_unlocked = []
 shutting_down = []
-started = [ "tmux start-server" ]
+started = ""
 theme_mode_changed = []
 wallpaper_changed = []
 wifi_disabled = []
@@ -232,7 +232,7 @@ sunset = ""
 [lockscreen]
 allow_empty_password = false
 blur_intensity = 0.28999999165534973
-blurred_desktop = false
+blurred_desktop = true
 enabled = true
 fingerprint = true
 monitors = []
@@ -259,7 +259,7 @@ widget_order = [
     visible = false
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 213.0
+    box_height = 196.0
     box_width = 810.0
     cx = 840.0
     cy = 859.5
@@ -279,11 +279,13 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
         show_session_buttons = true
         show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 113.265625
+    box_height = 70.0
     box_width = 326.455078125
     cx = 699.7216796875
     cy = 492.3203125
@@ -303,11 +305,13 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = false
+        show_media = true
         show_session_buttons = true
         show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
-    box_height = 213.0
+    box_height = 196.0
     box_width = 720.0
     cx = 325.5
     cy = 479.5
@@ -327,8 +331,10 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
+        show_media = true
         show_session_buttons = true
         show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 116.25
@@ -517,7 +523,7 @@ polkit_agent = true
 popup_borders = true
 popup_shadows = true
 screen_time_enabled = false
-settings_show_advanced = true
+settings_show_advanced = false
 setup_wizard_enabled = true
 shared_gl_context = true
 show_location = true
@@ -536,7 +542,6 @@ time_format = "{:%H:%M}"
     auto_paste = "off"
     categories = false
     compact = true
-    fetch_exchange_rates = false
     provider_prefix = "/"
     show_icons = true
     sort_by_usage = true
@@ -553,7 +558,7 @@ time_format = "{:%H:%M}"
         prefix = "s"
 
         [shell.launcher.providers.wallpaper]
-        prefix = "w"
+        prefix = ""
 
         [shell.launcher.providers.windows]
         prefix = ""
@@ -572,7 +577,7 @@ time_format = "{:%H:%M}"
     launcher_position = "center"
     list_item_background = false
     open_near_click_clipboard = false
-    open_near_click_control_center = false
+    open_near_click_control_center = true
     open_near_click_launcher = false
     open_near_click_session = false
     open_near_click_wallpaper = false
@@ -701,18 +706,18 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "kitty", "niri" ]
-    community_ids = [ "zathura", "bat", "lazygit", "yazi" ]
+    community_ids = [ "zellij", "bat", "lazygit", "yazi" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
 [wallpaper]
-directory = ""
+directory = "/home/muhammadtalha/Pictures/Wallpapers"
 directory_dark = ""
 directory_light = ""
 edge_smoothness = 0.30000001192092896
 enabled = true
 fill_color = ""
-fill_mode = "stretch"
+fill_mode = "crop"
 per_monitor_directories = false
 transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb" ]
 transition_duration = 1500.0
@@ -725,13 +730,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/after_school_stroll_gruvbox.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/tanjiro-kamado-gruv.jpg"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/after_school_stroll_gruvbox.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/tanjiro-kamado-gruv.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/after_school_stroll_gruvbox.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/tanjiro-kamado-gruv.jpg"
 
 [weather]
 effects = true
@@ -765,7 +770,7 @@ type = "brightness"
 
 [widget.clock]
 format = "{:%I:%M %p}"
-interactive = false
+interactive = true
 type = "clock"
 
 [widget.control-center]
@@ -887,7 +892,7 @@ show_label = false
 type = "volume"
 
 [widget.weather]
-interactive = false
+interactive = true
 show_condition = false
 type = "weather"
 

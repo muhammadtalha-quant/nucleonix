@@ -29,6 +29,7 @@
             google-chrome
             wl-clipboard
             ouch
+            zellij
             trash-cli
             celluloid
             loupe
@@ -36,6 +37,7 @@
             gh
             lazygit
             eza
+            papers
         ];
         pointerCursor.enable = true;
         stateVersion = "26.05";

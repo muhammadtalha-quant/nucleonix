@@ -8,7 +8,7 @@ binds {
     Mod+V {spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+Comma {spawn-sh "noctalia msg settings-toggle";}
     Mod+Period {spawn-sh "noctalia msg panel-toggle launcher /e";}
-    Mod+W {spawn-sh "noctalia msg panel-toggle launcher /w";}
+    Mod+W {spawn-sh "noctalia msg wallpaper-random";}
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher";}
     Ctrl+Alt+Delete {spawn-sh "noctalia msg panel-toggle session";}
 

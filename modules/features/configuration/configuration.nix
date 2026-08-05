@@ -38,8 +38,8 @@
         _7zz
         file
         gcc
-        tmux
         seahorse
+        yt-dlp
     ];
 
     time.timeZone = timeZone;
