@@ -20,6 +20,16 @@
         '';
         plugins = with pkgs.tmuxPlugins; [
             {
+                plugin = dotbar;
+                extraConfig = ''
+                    set -g @tmux-dotbar-bg "#282828"
+                    set -g @tmux-dotbar-fg "#665c54"
+                    set -g @tmux-dotbar-fg-current "#ebdbb2"
+                    set -g @tmux-dotbar-fg-session "#bdae93"
+                    set -g @tmux-dotbar-fg-prefix "#d3869b"
+                '';
+            }
+            {
                 plugin = sensible;
             }
             {
@@ -35,16 +45,6 @@
                 extraConfig = ''
                     set -g @continuum-save-interval '15'
                     set -g @continuum-restore 'on'
-                '';
-            }
-            {
-                plugin = dotbar;
-                extraConfig = ''
-                    set -g @tmux-dotbar-bg "#282828"
-                    set -g @tmux-dotbar-fg "#665c54"
-                    set -g @tmux-dotbar-fg-current "#ebdbb2"
-                    set -g @tmux-dotbar-fg-session "#bdae93"
-                    set -g @tmux-dotbar-fg-prefix "#d3869b"
                 '';
             }
         ];

@@ -5,6 +5,49 @@
         action = "<cmd>w<CR>";
     }
     {
+        key = "<leader>ss";
+        mode = "n";
+        action = "<cmd>lua require('grug-far').open({prefills = {paths = vim.fn.expand('%:p:h')}})<CR>";
+        desc = "Search: Open GrugFar in Current Directory";
+    }
+    {
+        key = "<leader>sw";
+        mode = "n";
+        action = "<cmd>lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>') } })<CR>";
+        desc = "Search: Word under cursor in Project";
+    }
+    {
+        key = "<leader>sw";
+        mode = "v";
+        action = "<cmd>lua require('grug-far').with_visual_selection()<CR>";
+        desc = "Search: Selection in Project";
+    }
+    {
+        key = "<leader>sf";
+        mode = "n";
+        action = "<cmd>lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%'), search = vim.fn.expand('<cword>') } })<CR>";
+        desc = "Search: Word under cursor in Current File";
+    }
+    {
+        key = "<leader>sf";
+        mode = "v";
+        action = "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<CR>";
+        desc = "Search: Selection in Current File";
+    }
+
+    {
+        key = "<leader>sd";
+        mode = "n";
+        action = "<cmd>lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%:p:h'), search = vim.fn.expand('<cword>') } })<CR>";
+        desc = "Search: Word under cursor in Current Directory";
+    }
+    {
+        key = "<leader>sd";
+        mode = "v";
+        action = "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%:p:h') } })<CR>";
+        desc = "Search: Selection in Current Directory";
+    }
+    {
         key = "<C-n>";
         mode = "n";
         action = "<cmd>ene | startinsert<CR>";
@@ -27,7 +70,7 @@
     {
         key = "<leader>q";
         mode = "n";
-        action = "<cmd>q<CR>";
+        action = "<cmd>q!<CR>";
         desc = "Close Buffer/Neovim ";
     }
 
@@ -75,12 +118,6 @@
         action = "<cmd>bd!<CR>";
         desc = "Force delete buffer";
     }
-    {
-        key = "<leader>gf";
-        mode = "n";
-        action = "<cmd>GrugFar<CR>";
-        desc = "Find and Replace in Directory";
-    }
 
     {
         key = "<leader>bn";
@@ -93,12 +130,6 @@
         mode = "n";
         action = "<cmd>bp<CR>";
         desc = "Previous buffer";
-    }
-    {
-        key = "<leader>bf";
-        mode = "n";
-        action = "<cmd>GrugFarWithin<CR>";
-        desc = "Find and Replace In Focused Buffer";
     }
     {
         key = "<C-Right>";
