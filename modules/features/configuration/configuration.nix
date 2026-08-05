@@ -40,6 +40,7 @@
         gcc
         tmux
         seahorse
+        yt-dlp
     ];
 
     time.timeZone = timeZone;

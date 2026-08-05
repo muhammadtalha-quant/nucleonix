@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-    myAbbreviations = {
-        ls = "eza --icons --color=always";
+    abbreviations = {
+        ls = "eza --icons";
         lla = "eza -lgaoh --icons --git";
         ll = "eza -lgoh --icons --git";
         lf = "eza -goh --icons --only-files --show-symlinks --git";
@@ -12,12 +12,8 @@ let
         lladir = "eza -lgaoh --icons --only-dirs --show-symlinks --git";
         llf = "eza -lgoh --icons --only-files --show-symlinks --git";
         lldir = "eza -lgoh --icons --only-dirs --show-symlinks --git";
-        la = "eza -ah --icons --color=always";
+        la = "eza -ah --icons";
         lt = "eza --tree --icons --git";
-        home = "cd ~";
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
         "000" = "chmod 000";
         "644" = "chmod 644";
         "666" = "chmod 666";
@@ -33,24 +29,33 @@ let
         cp = "cp -rv";
         mv = "mv -v";
         rm = "rm -frv";
-        vi = "nvim";
-        lg = "lazygit";
+        less = "less -R";
         sucp = "sudo cp -rv";
         sumv = "sudo mv -v";
         surm = "sudo rm -frv";
-        less = "less -R";
         cls = "clear";
+    };
+    aliases = {
+        home = "cd ~";
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        "...." = "cd ../../..";
+        vi = "nvim";
+        lg = "lazygit";
         vim = "nvim";
-        nswitch = "nh os switch";
-        nboot = "nh os boot";
-        ntest = "nh os test";
-        fupdate = "nix flake update --flake $FLAKE_PATH";
         fm = "yazi";
+        ts = "tmux start-server";
         ta = "tmux attach-session -dt";
         tn = "tmux new -As";
         tl = "tmux list-sessions";
+        ns = "nh os switch";
+        nb = "nh os boot";
+        nt = "nh os test";
+        ni = "nh os info";
+        nr = "nh os rollback --to";
+        nfu = "nix flake update --flake $FLAKE_PATH";
     };
-    myPlugins = with pkgs.fishPlugins; [
+    fishPlugins = with pkgs.fishPlugins; [
         {
             name = "autopair";
             inherit (autopair) src;
@@ -64,15 +69,15 @@ in
     '';
     programs.fish = {
         enable = true;
-        shellAbbrs = myAbbreviations;
-        preferAbbrs = true;
+        shellAbbrs = abbreviations;
+        shellAliases = aliases;
         shellInit = ''
             fastfetch
         '';
-        plugins = myPlugins;
+        plugins = fishPlugins;
         functions.clh.body = ''
-            clear && echo yes | history clear
-            fish
+            echo yes | history clear
+            clear && fish
         '';
     };
 }
