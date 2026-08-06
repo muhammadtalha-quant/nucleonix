@@ -1,5 +1,6 @@
 {
     pkgs,
+    nvfLib,
     ...
 }:
 let
@@ -16,7 +17,8 @@ let
     pluginBlink = import ./plugins/blink.nix;
     pluginDiagnostics = import ./plugins/diagnostics.nix;
     pluginLualine = import ./plugins/lualine.nix;
-    luaConfigRCLualine = import ./luaConfigRC/lualine.nix;
+    luaConfigRCLualine = import ./luaConfigRC/lualineRC.nix;
+    luaConfigRCBlink = import ./luaConfigRC/blinkRC.nix;
 in
 {
     programs.nvf = {
@@ -26,6 +28,7 @@ in
             vim = {
                 luaConfigRC = {
                     lualine = luaConfigRCLualine;
+                    blink-cmp = nvfLib.dag.entryAfter [ "autocomplete" ] luaConfigRCBlink;
                 };
                 extraPackages = [
                     pkgs.fzf

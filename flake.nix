@@ -33,6 +33,7 @@
             nixpkgs,
             nixpkgs-unstable,
             homeManager,
+            nvf,
             disko,
             stylix,
             ...
@@ -121,6 +122,7 @@
                                 inherit realName;
                                 inherit gpgKey;
                                 inherit disabledHMTargets;
+                                nvfLib = nvf.lib.nvim;
                                 inherit pkgs-unstable;
                                 inherit emailAddress;
                             };
