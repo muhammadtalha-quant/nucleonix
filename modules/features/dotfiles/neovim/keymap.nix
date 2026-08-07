@@ -7,44 +7,56 @@
     {
         key = "<leader>ss";
         mode = "n";
-        action = "<cmd>lua require('grug-far').open({prefills = {paths = vim.fn.expand('%:p:h')}})<CR>";
+        action = ''
+            function()
+                require('grug-far').open({prefills = {paths = vim.fn.expand('%:p:h')}})
+            end
+        '';
+        lua = true;
         desc = "Search: Open GrugFar in Current Directory";
-    }
-    {
-        key = "<leader>sw";
-        mode = "n";
-        action = "<cmd>lua require('grug-far').open({ prefills = { search = vim.fn.expand('<cword>') } })<CR>";
-        desc = "Search: Word under cursor in Project";
-    }
-    {
-        key = "<leader>sw";
-        mode = "v";
-        action = "<cmd>lua require('grug-far').with_visual_selection()<CR>";
-        desc = "Search: Selection in Project";
     }
     {
         key = "<leader>sf";
         mode = "n";
-        action = "<cmd>lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%'), search = vim.fn.expand('<cword>') } })<CR>";
+        action = ''
+            function()
+                require('grug-far').open({ prefills = { paths = vim.fn.expand('%'), search = vim.fn.expand('<cword>') } }) 
+            end'';
+        lua = true;
         desc = "Search: Word under cursor in Current File";
     }
     {
         key = "<leader>sf";
         mode = "v";
-        action = "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })<CR>";
+        action = ''
+            function()
+                require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%') } })
+            end
+        '';
+        lua = true;
         desc = "Search: Selection in Current File";
     }
 
     {
         key = "<leader>sd";
         mode = "n";
-        action = "<cmd>lua require('grug-far').open({ prefills = { paths = vim.fn.expand('%:p:h'), search = vim.fn.expand('<cword>') } })<CR>";
+        action = ''
+            function()
+                require('grug-far').open({ prefills = { paths = vim.fn.expand('%:p:h'), search = vim.fn.expand('<cword>') } })
+             end
+        '';
+        lua = true;
         desc = "Search: Word under cursor in Current Directory";
     }
     {
         key = "<leader>sd";
         mode = "v";
-        action = "<cmd>lua require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%:p:h') } })<CR>";
+        action = ''
+            function()
+                require('grug-far').with_visual_selection({ prefills = { paths = vim.fn.expand('%:p:h') } })
+            end
+        '';
+        lua = true;
         desc = "Search: Selection in Current Directory";
     }
     {
@@ -53,24 +65,9 @@
         action = "<cmd>ene | startinsert<CR>";
     }
     {
-        key = "o";
-        mode = "n";
-        action = "<Nop>";
-        noremap = true;
-        silent = true;
-    }
-    {
-        key = "O";
-        mode = "n";
-        action = "<Nop>";
-        noremap = true;
-        silent = true;
-    }
-
-    {
         key = "<leader>q";
         mode = "n";
-        action = "<cmd>q!<CR>";
+        action = "<cmd>q<CR>";
         desc = "Close Buffer/Neovim ";
     }
 
@@ -80,7 +77,18 @@
         action = "<cmd>noh<CR>";
         desc = "Clear search highlight";
     }
-
+    {
+        key = "<leader>|";
+        mode = "n";
+        action = "<C-w>v";
+        desc = "Split vertically";
+    }
+    {
+        key = "<leader>-";
+        mode = "n";
+        action = "<C-w>s";
+        desc = "Split horizontally";
+    }
     {
         key = "<leader>ff";
         mode = "n";
@@ -107,124 +115,35 @@
     }
 
     {
-        key = "<leader>bd";
+        key = "<M-x>";
         mode = "n";
         action = "<cmd>bd<CR>";
         desc = "Delete buffer";
     }
     {
-        key = "<leader>bD";
-        mode = "n";
-        action = "<cmd>bd!<CR>";
-        desc = "Force delete buffer";
-    }
-
-    {
-        key = "<leader>bn";
-        mode = "n";
-        action = "<cmd>bn<CR>";
-        desc = "Next buffer";
-    }
-    {
-        key = "<leader>bp";
-        mode = "n";
-        action = "<cmd>bp<CR>";
-        desc = "Previous buffer";
-    }
-    {
         key = "<C-Right>";
         mode = "n";
-        action = "<cmd>lua require('smart-splits').move_cursor_left()<CR>";
-        desc = "Move left window";
+        action = "<C-w>l";
+        desc = "Move right window";
     }
     {
         key = "<C-Down>";
         mode = "n";
-        action = "<cmd>lua require('smart-splits').move_cursor_down()<CR>";
+        action = "<C-w>j";
         desc = "Move down window";
     }
     {
         key = "<C-Up>";
         mode = "n";
-        action = "<cmd>lua require('smart-splits').move_cursor_up()<CR>";
+        action = "<C-w>k";
         desc = "Move up window";
     }
     {
         key = "<C-Left>";
         mode = "n";
-        action = "<cmd>lua require('smart-splits').move_cursor_right()<CR>";
-        desc = "Move right window";
+        action = "<C-w>h";
+        desc = "Move left window";
     }
-
-    {
-        key = "<leader>ld";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.definition()<CR>";
-        desc = "Go to definition";
-    }
-    {
-        key = "<leader>lr";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.references()<CR>";
-        desc = "References";
-    }
-    {
-        key = "<leader>li";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.implementation()<CR>";
-        desc = "Implementation";
-    }
-    {
-        key = "<leader>lh";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.hover()<CR>";
-        desc = "Hover documentation";
-    }
-    {
-        key = "<leader>la";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
-        desc = "Code action";
-    }
-    {
-        key = "<leader>lrn";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.rename()<CR>";
-        desc = "Rename symbol";
-    }
-    {
-        key = "<leader>lf";
-        mode = "n";
-        action = "<cmd>lua vim.lsp.buf.format()<CR>";
-        desc = "Format";
-    }
-
-    {
-        key = "<leader>xx";
-        mode = "n";
-        action = "<cmd>lua vim.diagnostic.setloclist()<CR>";
-        desc = "Diagnostics list";
-    }
-    {
-        key = "[d";
-        mode = "n";
-        action = "<cmd>lua vim.diagnostic.goto_prev()<CR>";
-        desc = "Previous diagnostic";
-    }
-    {
-        key = "]d";
-        mode = "n";
-        action = "<cmd>lua vim.diagnostic.goto_next()<CR>";
-        desc = "Next diagnostic";
-    }
-
-    {
-        key = "<leader>td";
-        mode = "n";
-        action = "<cmd>TodoFzfLua<CR>";
-        desc = "Find TODOs";
-    }
-
     {
         key = "<leader>db";
         mode = "n";
@@ -238,9 +157,32 @@
         desc = "Continue";
     }
     {
-        key = "<leader>ds";
+        key = "<leader>di";
+        mode = "n";
+        action = "<cmd>DapStepInto<CR>";
+        desc = "Step into";
+    }
+    {
+        key = "<leader>do";
         mode = "n";
         action = "<cmd>DapStepOver<CR>";
         desc = "Step over";
+    }
+    {
+        key = "<leader>dt";
+        mode = "n";
+        action = "<cmd>DapTerminate<CR>";
+        desc = "Terminate session";
+    }
+    {
+        key = "<leader>du";
+        mode = "n";
+        action = ''
+            function()
+                require('dapui').toggle()
+            end
+        '';
+        lua = true;
+        desc = "Toggle DAP UI";
     }
 ]

@@ -36,6 +36,7 @@
             gh
             lazygit
             eza
+            papers
         ];
         pointerCursor.enable = true;
         stateVersion = "26.05";

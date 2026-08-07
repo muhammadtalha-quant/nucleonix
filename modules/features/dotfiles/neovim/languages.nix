@@ -16,6 +16,7 @@
     typst = {
         enable = true;
         extensions.typst-concealer.enable = true;
+        extensions.typst-concealer.mappings.toggleConcealing = "<leader>T";
         format.type = [ "typstyle" ];
         lsp.servers = [ "tinymist" ];
     };

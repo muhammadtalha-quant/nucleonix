@@ -48,8 +48,6 @@
 
             # !=== FLAKE CONFIG ===!
             system = "x86_64-linux";
-            # must match nixpkgs.hostPlatform = lib.mkDefault "<<arch>>";
-            # from hardware-configuration.nix
             pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
             # !=== USER CONFIG ===!
@@ -77,7 +75,6 @@
                 "tmux"
                 "starship"
                 "cava"
-                "zathura"
                 "lazygit"
             ];
             # !=== SYNCTHING CONFIG ===!

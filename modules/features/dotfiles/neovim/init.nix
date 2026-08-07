@@ -10,6 +10,7 @@ let
     utils = import ./utils.nix;
     uiTheme = import ./theme.nix;
     ui2 = import ./ui2.nix;
+    lspConfig = import ./lspconfig.nix;
     pluginDashboard = import ./plugins/dashboard.nix;
     pluginVisual = import ./plugins/visuals.nix;
     pluginToggleTerm = import ./plugins/toggleterm.nix;
@@ -17,6 +18,8 @@ let
     pluginBlink = import ./plugins/blink.nix;
     pluginDiagnostics = import ./plugins/diagnostics.nix;
     pluginLualine = import ./plugins/lualine.nix;
+    pluginWhichKey = import ./plugins/whichkey.nix;
+    pluginTODO = import ./plugins/todo.nix;
     luaConfigRCLualine = import ./luaConfigRC/lualineRC.nix;
     luaConfigRCBlink = import ./luaConfigRC/blinkRC.nix;
 in
@@ -41,17 +44,16 @@ in
                 terminal.toggleterm = pluginToggleTerm;
                 dashboard.dashboard-nvim = pluginDashboard;
                 diagnostics = pluginDiagnostics;
-                git.enable = true;
-                binds.whichKey.enable = true;
+                binds.whichKey = pluginWhichKey;
                 ui = ui2;
-                lsp = {
+                lsp = lspConfig;
+                debugger.nvim-dap = {
                     enable = true;
-                    formatOnSave = true;
+                    ui.enable = true;
                 };
-                debugger.nvim-dap.enable = true;
                 languages = langs;
                 visuals = pluginVisual;
-                notes.todo-comments.enable = true;
+                notes.todo-comments = pluginTODO;
                 clipboard = {
                     enable = true;
                     providers.wl-copy.enable = true;
