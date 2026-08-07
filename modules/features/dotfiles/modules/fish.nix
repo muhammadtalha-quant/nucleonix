@@ -44,7 +44,6 @@ let
         lg = "lazygit";
         vim = "nvim";
         fm = "yazi";
-        ts = "tmux start-server";
         ta = "tmux attach-session -dt";
         tn = "tmux new -As";
         tl = "tmux list-sessions";
@@ -70,6 +69,7 @@ in
     programs.fish = {
         enable = true;
         shellAbbrs = abbreviations;
+        preferAbbrs = true;
         shellAliases = aliases;
         shellInit = ''
             fastfetch
