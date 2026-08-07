@@ -4,9 +4,9 @@
         wantedBy = [ "default.target" ];
         serviceConfig = {
             Type = "forking";
-            ExecStart = "${pkgs.tmux}/bin/tmux start-server";
-            ExecStop = "${pkgs.tmux}/bin/tmux kill-server";
-            Restart = "on-failure";
+            ExecStart = "${pkgs.tmux}/bin/tmux new-session -s service -d";
+            ExecStop = "${pkgs.tmux}/bin/tmux kill-server -t service";
+            RemainAfterExit = "yes";
         };
     };
 }
