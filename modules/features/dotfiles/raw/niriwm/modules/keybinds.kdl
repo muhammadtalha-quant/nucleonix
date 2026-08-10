@@ -1,6 +1,6 @@
 binds {
 
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "wezterm"; }
     Mod+L {spawn-sh "noctalia msg session lock";}
     Mod+N {spawn "obsidian";}
     Mod+B {spawn "google-chrome";}

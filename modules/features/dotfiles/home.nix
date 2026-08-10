@@ -29,7 +29,6 @@
             google-chrome
             wl-clipboard
             ouch
-            zellij
             trash-cli
             celluloid
             loupe

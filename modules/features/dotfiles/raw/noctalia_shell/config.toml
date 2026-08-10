@@ -542,6 +542,7 @@ time_format = "{:%H:%M}"
     auto_paste = "off"
     categories = false
     compact = true
+    fetch_exchange_rates = false
     provider_prefix = "/"
     show_icons = true
     sort_by_usage = true
@@ -705,8 +706,8 @@ source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "kitty", "niri" ]
-    community_ids = [ "zellij", "bat", "lazygit", "yazi" ]
+    builtin_ids = [ "btop", "cava", "niri", "wezterm" ]
+    community_ids = [ "bat", "lazygit", "yazi" ]
     enable_builtin_templates = true
     enable_community_templates = true
 

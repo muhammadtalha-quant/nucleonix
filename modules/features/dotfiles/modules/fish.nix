@@ -43,14 +43,7 @@ let
         vi = "nvim";
         lg = "lazygit";
         vim = "nvim";
-        ff = "yazi";
-        za = "zellij a";
-        zs = "zellij -s";
-        zd = "zellij d";
-        zda = "zellij da";
-        zls = "zellij ls";
-        zk = "zellij k";
-        zka = "zellij ka";
+        fm = "yazi";
         ns = "nh os switch";
         nb = "nh os boot";
         nt = "nh os test";
