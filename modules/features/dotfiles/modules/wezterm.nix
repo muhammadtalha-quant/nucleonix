@@ -1,12 +1,21 @@
-{
+{ lib, ... }: {
     programs = {
         wezterm = {
             enable = true;
+            settings = {
+                color_scheme = "Noctalia";
+                adjust_window_size_when_changing_font_size = false;
+                font_size = 14;
+                hide_tab_bar_if_only_one_tab = true;
+                window_padding = {
+                    left = 0;
+                    right = 0;
+                    top = 0;
+                    bottom = 0;
+                };
+                font = lib.generators.mkLuaInline ''wezterm.font("JetBrainsMono NFM")'';
+            };
             /*
-              font = {
-                  name = "JetBrainsMono Nerd Font Mono";
-                  size = 14;
-              };
               settings = {
                   remember_window_size = true;
                   background_opacity = 1;
