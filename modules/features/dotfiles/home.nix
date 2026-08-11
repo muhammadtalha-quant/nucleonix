@@ -10,8 +10,7 @@
 {
 
     imports = [
-        inputs.nvf.homeManagerModules.default
-        ./neovim/init.nix
+        inputs.lazyvim.homeManagerModules.default
         inputs.noctalia-shell.homeModules.default
         (inputs.import-tree ./modules)
     ];
