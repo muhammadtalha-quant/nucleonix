@@ -706,7 +706,7 @@ source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "niri", "wezterm" ]
+    builtin_ids = [ "btop", "cava", "niri", "kitty" ]
     community_ids = [ "bat", "lazygit", "yazi" ]
     enable_builtin_templates = true
     enable_community_templates = true

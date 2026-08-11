@@ -64,7 +64,7 @@
         "kmscon"
       ];
       disabledHMTargets = [
-        "wezterm"
+        "kitty"
         "btop"
         "yazi"
         "nvf"
