@@ -1,6 +1,9 @@
 {
-    security = {
-        rtkit.enable = true;
-        pam.services.greetd.fprintAuth = true;
+  security = {
+    rtkit.enable = true;
+    pam.services.ly = {
+      enableGnomeKeyring = true;
+      fprintAuth = true;
     };
+  };
 }

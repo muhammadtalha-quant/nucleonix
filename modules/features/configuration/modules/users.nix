@@ -1,23 +1,24 @@
 {
-    pkgs,
-    userName,
-    realName,
-    hashedPassword,
-    ...
+  pkgs,
+  userName,
+  realName,
+  hashedRootPassword,
+  hashedUserPassword,
+  ...
 }:
 {
-    users = {
-        mutableUsers = false;
-        users.root = { inherit hashedPassword; };
-        users.${userName} = {
-            isNormalUser = true;
-            description = realName;
-            extraGroups = [
-                "networkmanager"
-                "wheel"
-            ];
-            shell = pkgs.fish;
-            inherit hashedPassword;
-        };
+  users = {
+    mutableUsers = false;
+    users.root.hashedPassword = hashedRootPassword;
+    users.${userName} = {
+      isNormalUser = true;
+      description = realName;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      shell = pkgs.fish;
+      hashedPassword = hashedUserPassword;
     };
+  };
 }

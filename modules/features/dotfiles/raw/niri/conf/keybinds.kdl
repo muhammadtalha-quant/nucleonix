@@ -1,13 +1,13 @@
 binds {
 
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "ghostty"; }
     Mod+L {spawn-sh "noctalia msg session lock";}
     Mod+N {spawn "obsidian";}
     Mod+B {spawn "google-chrome";}
     Mod+Semicolon {spawn "localsend_app";}
     Mod+V {spawn-sh "noctalia msg panel-toggle clipboard"; }
-    Mod+Comma {spawn-sh "noctalia msg settings-toggle";}
-    Mod+Period {spawn-sh "noctalia msg panel-toggle launcher /e";}
+    Mod+Period {spawn-sh "noctalia msg settings-toggle";}
+    Mod+Comma {spawn-sh "noctalia msg panel-toggle launcher /e";}
     Mod+W {spawn-sh "noctalia msg wallpaper-random";}
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher";}
     Ctrl+Alt+Delete {spawn-sh "noctalia msg panel-toggle session";}

@@ -19,45 +19,46 @@ order = [ "default" ]
 
     [bar.default]
     auto_hide = false
-    background_opacity = 0.64999997615814209
+    background_opacity = 0.0
     border = "outline"
     border_width = 0.0
     capsule = true
-    capsule_border = "outline"
+    capsule_border = "on_primary"
     capsule_fill = "on_primary"
+    capsule_foreground = "on_surface"
     capsule_group = []
-    capsule_opacity = 0.70999997854232788
-    capsule_padding = 6.0
+    capsule_opacity = 0.99999997764825821
+    capsule_padding = 10.0
     capsule_radius = 15.0
-    capsule_thickness = 0.75999999046325684
-    center = [ "audio_visualizer", "notifications", "clock", "audio_visualizer" ]
-    concave_edge_corners = true
+    capsule_thickness = 0.74999998696148396
+    center = [ "audio_visualizer", "notifications", "privacy", "clock", "audio_visualizer" ]
+    concave_edge_corners = false
     contact_shadow = false
     enabled = true
-    end = [ "privacy", "network", "bluetooth", "volume", "brightness", "battery" ]
+    end = [ "recorder", "network", "bluetooth", "volume", "brightness", "battery" ]
     font_family = "JetBrainsMono NFM"
     font_weight = 700
-    hover_highlight = true
+    hover_highlight = false
     layer = "top"
-    margin_edge = 4
-    margin_ends = 20
+    margin_edge = 0
+    margin_ends = 0
     margin_opposite_edge = 0
     padding = 14
-    panel_overlap = 1
+    panel_overlap = 0
     position = "top"
-    radius = 0
-    radius_bottom_left = 30
-    radius_bottom_right = 45
-    radius_top_left = 31
-    radius_top_right = 42
+    radius = 3
+    radius_bottom_left = 0
+    radius_bottom_right = 0
+    radius_top_left = 0
+    radius_top_right = 0
     reserve_space = true
-    scale = 1.2000000476837158
-    shadow = true
+    scale = 1.0000000074505806
+    shadow = false
     show_on_workspace_switch = true
     smart_auto_hide = false
     start = [ "workspaces", "weather" ]
-    thickness = 35
-    widget_spacing = 6
+    thickness = 40
+    widget_spacing = 7
 
         [bar.default.dead_zone]
 
@@ -77,7 +78,7 @@ refresh_minutes = 15
 [control_center]
 hidden_tabs = []
 sidebar = "compact"
-sidebar_section = "compact"
+sidebar_section = "none"
 width = 700
 
     [control_center.calendar]
@@ -112,40 +113,40 @@ active_monitor_only = false
 active_opacity = 1.0
 active_scale = 1.0
 auto_hide = false
-background_opacity = 0.87999999523162842
+background_opacity = 0.99999997764825821
 border = "outline"
 border_width = 0.0
-concave_edge_corners = true
+concave_edge_corners = false
 cross_axis_padding = 8
 enabled = false
-icon_size = 48
+icon_size = 36
 inactive_opacity = 0.85000002384185791
 inactive_scale = 0.85000002384185791
-item_spacing = 6
+item_spacing = 11
 launcher_custom_image = ""
 launcher_custom_image_colorize = false
 launcher_icon = "grid-dots"
-launcher_position = "none"
+launcher_position = "start"
 layer = "top"
 magnification = true
-magnification_scale = 1.4500000476837158
+magnification_scale = 1.3500000052154064
 main_axis_padding = 16
-margin_edge = 0
+margin_edge = 11
 margin_ends = 0
 monitors = []
-pinned = []
+pinned = [ "com.mitchellh.ghostty", "org.gnome.Nautilus", "google-chrome" ]
 position = "bottom"
-radius = 16
+radius = 0
 radius_bottom_left = 16
 radius_bottom_right = 16
 radius_top_left = 16
 radius_top_right = 16
-reserve_space = true
+reserve_space = false
 shadow = true
-show_dots = false
+show_dots = true
 show_instance_count = true
 show_running = true
-smart_auto_hide = false
+smart_auto_hide = true
 
 [hooks]
 battery_charging = []
@@ -230,27 +231,22 @@ sunrise = ""
 sunset = ""
 
 [lockscreen]
-allow_empty_password = false
-blur_intensity = 0.28999999165534973
+allow_empty_password = true
 blurred_desktop = true
-enabled = true
-fingerprint = true
-monitors = []
-tint_intensity = 0.30000001192092896
-wallpaper = "/home/muhammadtalha/Pictures/Wallpapers/future-town.jpg"
+monitors = [ "eDP-1" ]
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
 widget_order = [
-    "lockscreen-login-box@DP-1",
-    "lockscreen-login-box@winit",
     "lockscreen-login-box@eDP-1",
     "lockscreen-widget-0000000000000001",
     "lockscreen-widget-0000000000000002",
     "lockscreen-widget-0000000000000003",
     "lockscreen-widget-0000000000000004",
-    "lockscreen-widget-0000000000000005"
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000007",
+    "lockscreen-widget-0000000000000008"
 ]
 
     [lockscreen_widgets.grid]
@@ -258,38 +254,11 @@ widget_order = [
     major_interval = 4
     visible = false
 
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 840.0
-    cy = 859.5
-    enabled = true
-    output = "DP-1"
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 70.0
-    box_width = 326.455078125
-    cx = 699.7216796875
-    cy = 492.3203125
-    enabled = true
+    box_width = 376.9140625
+    cx = 683.0
+    cy = 547.1875
     output = "eDP-1"
     rotation = 0.0
     type = "login_box"
@@ -298,138 +267,129 @@ widget_order = [
         background_color = "surface_variant"
         background_opacity = 0.0
         background_radius = 0.0
-        center_password_text = false
-        input_opacity = 0.56000000000000005
-        input_radius = 23.0
+        center_password_text = true
+        input_opacity = 0.20000000000000001
+        input_radius = 16.0
         layout = "compact"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = false
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
-    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
-    box_height = 196.0
-    box_width = 720.0
-    cx = 325.5
-    cy = 479.5
-    enabled = true
-    output = "winit"
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 116.25
-    box_width = 481.56640625
+    box_height = 184.73828125
+    box_width = 322.09375
     cx = 683.0
-    cy = 124.5390625
-    enabled = true
+    cy = 189.001953125
     output = "eDP-1"
     rotation = 0.0
     type = "clock"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
         background = false
-        background_opacity = 0.0
-        background_padding = 8
-        background_radius = 11
         center_text = true
-        clock_style = "digital"
-        font_family = "DejaVu Serif"
+        font_family = "DejaVu Sans Mono"
+        shadow = true
+        timezone = "Asia/Karachi"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-    box_height = 30.71875
-    box_width = 211.28857421875
+    box_height = 39.38671875
+    box_width = 317.4453125
     cx = 683.0
-    cy = 199.39453125
-    enabled = true
+    cy = 546.880859375
     output = "eDP-1"
     rotation = 0.0
-    type = "clock"
+    type = "audio_visualizer"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
         background = false
-        background_opacity = 0.0
-        background_padding = 8
-        background_radius = 11
-        center_text = true
-        clock_style = "digital"
-        color = "on_surface"
-        font_family = "DejaVu Serif"
-        format = "{:%b %d, %Y}"
+        bands = 104
+        centered = false
+        color_1 = "primary"
+        color_2 = "secondary"
+        show_when_idle = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 98.0703125
-    box_width = 209.8359375
-    cx = 119.23046875
-    cy = 713.44140625
-    enabled = true
+    box_height = 142.05078125
+    box_width = 236.28125
+    cx = 120.19921875
+    cy = 55.787109375
     output = "eDP-1"
     rotation = 0.0
     type = "weather"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
         background = false
-        background_color = "primary"
-        background_opacity = 0.17000000000000001
-        color = "on_surface"
-        font_family = "Inter ExtraBold"
+        font_family = "DejaVu Sans Mono"
+        show_forecast = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-    box_height = 32.234375
-    box_width = 42.26171875
-    cx = 1289.060546875
-    cy = 20.3671875
-    enabled = true
+    box_height = 128.75
+    box_width = 284.48828125
+    cx = 683.0
+    cy = 673.14453125
     output = "eDP-1"
     rotation = 0.0
-    type = "sysmon"
+    type = "media_player"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
         background = false
-        color = "on_surface"
-        display = "gauge"
-        gauge_layout = "horizontal"
-        show_label = false
-        stat = "cpu_usage"
-        stat2 = "ram_pct"
+        hide_when_no_media = true
+        layout = "horizontal"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
-    box_height = 32.234375
-    box_width = 42.26171875
-    cx = 1336.857421875
-    cy = 21.48828125
-    enabled = true
+    box_height = 45.30859375
+    box_width = 203.8218994140625
+    cx = 683.0
+    cy = 272.009765625
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = false
+        format = "{:%d/%m/%y}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 48.0
+    box_width = 64.0
+    cx = 1259.0
+    cy = 24.0
     output = "eDP-1"
     rotation = 0.0
     type = "sysmon"
 
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
         background = false
-        color = "on_surface"
         display = "gauge"
         gauge_layout = "horizontal"
+        label_min_width = 0
+        shadow = true
         show_label = false
         stat = "ram_pct"
-        stat2 = "ram_pct"
+        stat2 = "cpu_temp"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
+    box_height = 48.0
+    box_width = 64.0
+    cx = 1332.0078125
+    cy = 22.734375
+    output = "eDP-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
+        background = false
+        display = "gauge"
+        gauge_layout = "horizontal"
+        label_min_width = 0
+        shadow = true
+        show_label = false
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
 
 [nightlight]
 enabled = false
@@ -452,7 +412,7 @@ show_actions = true
 show_app_name = true
 
 [osd]
-background_opacity = 0.64999997615814209
+background_opacity = 0.39999999105930328
 border = true
 enabled = true
 monitors = []
@@ -461,7 +421,7 @@ offset_y = 8
 orientation = "horizontal"
 position = "top_center"
 position_vertical = "top_center"
-scale = 1.0
+scale = 1.2000000104308128
 
     [osd.kinds]
     bluetooth = true
@@ -480,20 +440,20 @@ scale = 1.0
     volume_output = true
     wifi = true
 
-[plugin_settings]
+[plugin_settings."noctalia/screen_recorder"]
+color_range = "full"
 
 [plugins]
 auto_update = true
-enabled = []
+enabled = [ "noctalia/screen_recorder" ]
 
     [[plugins.source]]
-    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
 
     [[plugins.source]]
-    enabled = true
+    enabled = false
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
@@ -541,7 +501,7 @@ time_format = "{:%H:%M}"
     app_grid = false
     auto_paste = "off"
     categories = false
-    compact = true
+    compact = false
     fetch_exchange_rates = false
     provider_prefix = "/"
     show_icons = true
@@ -571,7 +531,7 @@ time_format = "{:%H:%M}"
     borders = true
     clipboard_placement = "floating"
     clipboard_position = "center"
-    control_center_placement = "attached"
+    control_center_placement = "floating"
     control_center_position = "auto"
     floating_offset = 8
     launcher_placement = "floating"
@@ -602,13 +562,13 @@ time_format = "{:%H:%M}"
 
     [shell.screenshot]
     confirm_region = false
-    copy_to_clipboard = true
+    copy_to_clipboard = false
     directory = ""
     filename_pattern = ""
-    freeze_screen = true
+    freeze_screen = false
     pipe_command = ""
     pipe_to_command = false
-    save_to_file = true
+    save_to_file = false
     show_cursor = false
 
     [shell.session]
@@ -697,24 +657,24 @@ swap_pct_activity_threshold = 20.0
 swap_pct_critical_threshold = 80.0
 
 [theme]
-builtin = "Gruvbox"
-community_palette = "Oxocarbon"
+builtin = "Catppuccin"
+community_palette = "Catppuccin Macchiato Mauve"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
-source = "builtin"
+source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "niri", "kitty" ]
-    community_ids = [ "bat", "lazygit", "yazi" ]
+    builtin_ids = [ "btop", "cava", "niri" ]
+    community_ids = []
     enable_builtin_templates = true
-    enable_community_templates = true
+    enable_community_templates = false
 
 [wallpaper]
 directory = "/home/muhammadtalha/Pictures/Wallpapers"
-directory_dark = ""
-directory_light = ""
+directory_dark = "/home/muhammadtalha/Pictures/Wallpapers/macchiato"
+directory_light = "/home/muhammadtalha/Pictures/Wallpapers/latte"
 edge_smoothness = 0.30000001192092896
 enabled = true
 fill_color = ""
@@ -731,13 +691,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/tanjiro-kamado-gruv.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/wheat.png"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/tanjiro-kamado-gruv.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/wheat.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/tanjiro-kamado-gruv.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/wheat.png"
 
 [weather]
 effects = true
@@ -754,12 +714,14 @@ title_scroll = "always"
 type = "active_window"
 
 [widget.audio_visualizer]
-bands = 43
-color_1 = "secondary"
-color_2 = "error"
-interactive = true
+bands = 18
+capsule = true
+capsule_padding = 0
+color_1 = "primary"
+color_2 = "secondary"
+interactive = false
 type = "audio_visualizer"
-width = 138
+width = 175
 
     [widget.audio_visualizer.actions]
     left = "exec noctalia msg panel-toggle control-center media"
@@ -859,6 +821,9 @@ type = "custom_button"
     left = "exec noctalia msg session reboot"
     middle = "none"
 
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
 [widget.sleep]
 glyph = "suspend"
 type = "custom_button"
@@ -900,7 +865,7 @@ type = "weather"
 [widget.workspaces]
 active_pill_size = 1.8500000000000001
 capsule_padding = 9
-display = "none"
 empty_color = "tertiary"
-interactive = false
+interactive = true
+show_labels = true
 type = "workspaces"

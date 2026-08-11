@@ -1,21 +1,22 @@
-{ pkgs-unstable, ... }: {
-    programs = {
-        starship = {
-            enable = true;
-            enableFishIntegration = true;
-            settings = builtins.fromTOML (builtins.readFile ../raw/starship/config.toml);
-        };
-        fastfetch = {
-            enable = true;
-            settings = builtins.fromJSON (builtins.readFile ../raw/fastfetch/config.jsonc);
-        };
-        noctalia = {
-            enable = true;
-            package = pkgs-unstable.noctalia;
-            settings = ../raw/noctalia_shell/config.toml;
-        };
-        cava.enable = true;
-        btop.enable = true;
-        satty.enable = true;
+{
+  programs = {
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
     };
+
+    fastfetch.enable = true;
+    cava = {
+      enable = true;
+      settings.color.theme = "noctalia";
+    };
+    btop = {
+      enable = true;
+      settings = {
+        update_ms = 100;
+        color_theme = "noctalia";
+      };
+    };
+    lazygit.enable = true;
+  };
 }

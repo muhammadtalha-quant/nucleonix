@@ -1,44 +1,40 @@
 {
-    pkgs,
-    lib,
-    inputs,
-    userName,
-    disabledHMTargets,
-    ...
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  userName,
+  stylix,
+  lazyvim,
+  ...
 }:
 
 {
 
-    imports = [
-        inputs.lazyvim.homeManagerModules.default
-        inputs.noctalia-shell.homeModules.default
-        (inputs.import-tree ./modules)
+  imports = [
+    lazyvim.homeManagerModules.default
+    stylix.homeModules.stylix
+    (inputs.import-tree ./modules)
+  ];
+  programs.home-manager.enable = true;
+  home = {
+    username = userName;
+    pointerCursor.enable = true;
+    homeDirectory = "/home/${userName}";
+    packages = with pkgs; [
+      google-chrome
+      wl-clipboard
+      bat
+      nautilus
+      papers
+      obsidian
+      celluloid
+      loupe
+      gh
+      eza
+      pkgs-unstable.devenv
+      pkgs-unstable.noctalia
     ];
-
-    programs.home-manager.enable = true;
-
-    stylix.targets = lib.foldl' (
-        acc: target: lib.recursiveUpdate acc (lib.setAttrByPath [ target "enable" ] false)
-    ) { } disabledHMTargets;
-
-    home = {
-        username = userName;
-        homeDirectory = "/home/${userName}";
-        packages = with pkgs; [
-            google-chrome
-            wl-clipboard
-            ouch
-            trash-cli
-            celluloid
-            loupe
-            obsidian
-            gh
-            lazygit
-            eza
-            papers
-        ];
-        pointerCursor.enable = true;
-        stateVersion = "26.05";
-    };
+    stateVersion = "26.05";
+  };
 
 }

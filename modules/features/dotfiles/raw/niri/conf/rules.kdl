@@ -1,0 +1,108 @@
+window-rule {
+  geometry-corner-radius 20
+
+  background-effect {
+    blur true
+    xray false
+  }
+  clip-to-geometry true
+}
+
+window-rule {
+  match app-id="google-chrome"
+  open-maximized true
+}
+
+window-rule {
+  match title="Sign in - Google Accounts - Google Chrome"
+  open-floating true
+  default-column-width {  fixed 500;  }
+  default-window-height { fixed 500;  }
+}
+
+window-rule {
+  match app-id="com.mitchellh.ghostty"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="md.Obsidian"
+  open-maximized true
+}
+
+window-rule {
+    match title=r#"^(Open File)(.*)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(Select a File)(.*)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(Open Folder)(.*)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(Save As)(.*)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(Library)(.*)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(File Upload)(.*)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(.*)(wants to save)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^(.*)(wants to open)$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^([Pp]icture[-\s]?[Ii]n[-\s]?[Pp]icture)(.*)$"#
+    open-floating true
+    default-floating-position x=32 y=32 relative-to="bottom-right"
+}
+
+window-rule {
+    match title=r#".*is sharing (a window|your screen).*"#
+    open-floating true
+    default-floating-position x=0 y=12 relative-to="bottom"
+}
+
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+       xray false
+    }
+}
+
+layer-rule { 
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}

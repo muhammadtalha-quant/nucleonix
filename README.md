@@ -18,6 +18,9 @@ Nucleonix is my personal configuration based on the very lightweight
 
 ```text
 .
+├── devenv.lock
+├── devenv.nix
+├── devenv.yaml
 ├── flake.lock
 ├── flake.nix
 ├── LICENSE
@@ -37,34 +40,34 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │   │       ├── programs.nix
 │   │   │       ├── security.nix
 │   │   │       ├── services.nix
-│   │   │       ├── stylix.nix
 │   │   │       ├── users.nix
 │   │   │       └── xdg.nix
 │   │   └── dotfiles
 │   │       ├── home.nix
 │   │       ├── modules
 │   │       │   ├── fish.nix
+│   │       │   ├── ghostty.nix
 │   │       │   ├── git.nix
-│   │       │   ├── kitty.nix
-│   │       │   ├── lazyvim.nix
 │   │       │   ├── niri.nix
+│   │       │   ├── nvim.nix
 │   │       │   ├── programs.nix
-│   │       │   └── yazi.nix
+│   │       │   └── theming.nix
 │   │       └── raw
 │   │           ├── fastfetch
-│   │           │   └── config.jsonc
-│   │           ├── niriwm
-│   │           │   ├── config.kdl
-│   │           │   └── modules
-│   │           │       ├── inputs.kdl
-│   │           │       ├── keybinds.kdl
-│   │           │       ├── layerrules.kdl
-│   │           │       ├── monitors.kdl
-│   │           │       └── windowrules.kdl
-│   │           ├── noctalia_shell
-│   │           │   └── config.toml
+│   │           │   └── universal.jsonc
+│   │           ├── niri
+│   │           │   ├── conf
+│   │           │   │   ├── inputs.kdl
+│   │           │   │   ├── keybinds.kdl
+│   │           │   │   ├── monitors.kdl
+│   │           │   │   └── rules.kdl
+│   │           │   └── config.kdl
+│   │           ├── noctalia
+│   │           │   ├── latte.toml
+│   │           │   └── macchiato.toml
 │   │           └── starship
-│   │               └── config.toml
+│   │               ├── latte.toml
+│   │               └── macchiato.toml
 │   └── hosts
 │       └── hp-probook-430g2
 │           ├── default.nix
@@ -114,7 +117,10 @@ nano flake.nix
 - Run disko to handle formatting, partitioning and mounting of my disk.
 
 ```bash
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount --flake .#host
+sudo nix --experimental-features \
+     "nix-command flakes" run github:nix-community/disko/latest -- \
+     --mode destroy,format,mount \
+     --flake .#host
 ```
 
 > [!IMPORTANT]

@@ -13,9 +13,7 @@ debug {
 
 layout {
     gaps 16
-
     center-focused-column "never"
-
 }
 
 switch-events {
@@ -31,8 +29,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 
 include "noctalia.kdl"
-include "modules/keybinds.kdl"
-include "modules/inputs.kdl"
-include "modules/monitors.kdl"
-include "modules/layerrules.kdl"
-include "modules/windowrules.kdl"
+include "conf/keybinds.kdl"
+include "conf/inputs.kdl"
+include "conf/monitors.kdl"
+include "conf/rules.kdl"

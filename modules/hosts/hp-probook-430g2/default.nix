@@ -1,22 +1,22 @@
 { pkgs, ... }: {
-    imports = [
-        ./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
+  ];
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "i965";
+  };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-compute-runtime
     ];
+  };
 
-    environment.sessionVariables = {
-        LIBVA_DRIVER_NAME = "iHD";
-    };
-
-    hardware.graphics = {
-        enable = true;
-        extraPackages = with pkgs; [
-            intel-media-driver
-            intel-compute-runtime
-            vpl-gpu-rt
-        ];
-    };
-
-    boot.kernelParams = [
-        "i915.enable_guc=3"
-    ];
+  boot.kernelParams = [
+    "iwlwifi.power_save=0"
+    "iwlwifi.uapsd_disable=1"
+  ];
 }
