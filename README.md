@@ -38,7 +38,6 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │   │       ├── security.nix
 │   │   │       ├── services.nix
 │   │   │       ├── stylix.nix
-│   │   │       ├── systemd.nix
 │   │   │       ├── users.nix
 │   │   │       └── xdg.nix
 │   │   └── dotfiles
@@ -47,28 +46,10 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │       │   ├── fish.nix
 │   │       │   ├── git.nix
 │   │       │   ├── kitty.nix
+│   │       │   ├── lazyvim.nix
 │   │       │   ├── niri.nix
 │   │       │   ├── programs.nix
-│   │       │   ├── tmux.nix
 │   │       │   └── yazi.nix
-│   │       ├── neovim
-│   │       │   ├── init.nix
-│   │       │   ├── keymap.nix
-│   │       │   ├── languages.nix
-│   │       │   ├── luaConfigRC
-│   │       │   │   └── lualine.nix
-│   │       │   ├── opts.nix
-│   │       │   ├── plugins
-│   │       │   │   ├── blink.nix
-│   │       │   │   ├── dashboard.nix
-│   │       │   │   ├── diagnostics.nix
-│   │       │   │   ├── lualine.nix
-│   │       │   │   ├── mini.nix
-│   │       │   │   ├── toggleterm.nix
-│   │       │   │   └── visuals.nix
-│   │       │   ├── theme.nix
-│   │       │   ├── ui2.nix
-│   │       │   └── utils.nix
 │   │       └── raw
 │   │           ├── fastfetch
 │   │           │   └── config.jsonc
@@ -81,8 +62,7 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │           │       ├── monitors.kdl
 │   │           │       └── windowrules.kdl
 │   │           ├── noctalia_shell
-│   │           │   ├── config.toml
-│   │           │   └── wallpapers
+│   │           │   └── config.toml
 │   │           └── starship
 │   │               └── config.toml
 │   └── hosts
