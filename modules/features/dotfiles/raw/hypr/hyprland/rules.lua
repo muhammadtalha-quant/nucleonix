@@ -43,7 +43,7 @@ hl.window_rule({
 hl.window_rule({match = {float = 0 }, no_shadow = true})
 
 -- ######## Workspace rules ########
-hl.workspace_rule({ workspace = "special:special", gaps_out = 30 })
+hl.workspace_rule({ workspace = "special:special", gaps_out = 20, gaps_in = 5, })
 
 -- ######## Layer rules ########
 hl.layer_rule({

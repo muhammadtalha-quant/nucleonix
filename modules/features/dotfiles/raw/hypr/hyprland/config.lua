@@ -1,6 +1,7 @@
 hl.config({
   input = {
     kb_layout = "us",
+    kb_options = "compose:ralt",
     numlock_by_default = true,
     repeat_delay = 250,
     repeat_rate = 35,
@@ -33,7 +34,7 @@ hl.config({
     resize_on_border = true,
 
     no_focus_fallback = true,
-    allow_tearing = true, -- This just allows the `immediate` window rule to work
+    -- allow_tearing = true,
     snap = {
       enabled = true,
       window_gap = 4,

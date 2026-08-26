@@ -38,7 +38,6 @@ hl.animation({
     bezier = "emphasizedDecel"
 })
 
--- layers
 hl.animation({
     leaf = "layersIn",
     enabled = true,
@@ -66,7 +65,6 @@ hl.animation({
     speed = 2.7,
     bezier = "stall"
 })
--- workspaces
 hl.animation({
     leaf = "workspaces",
     enabled = true,
@@ -74,7 +72,6 @@ hl.animation({
     bezier = "menu_decel",
     style = "slide"
 })
--- specialWorkspace
  hl.animation({
      leaf = "specialWorkspaceIn",
      enabled = true,
