@@ -79,6 +79,7 @@ hl.config({
   },
   dwindle = {
     preserve_split = true,
+    force_split = 2,
     smart_split = false,
     smart_resizing = false
   },
