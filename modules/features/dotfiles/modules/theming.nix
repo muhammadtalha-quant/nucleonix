@@ -8,10 +8,7 @@ let
     btop.enable = false;
     cava.enable = false;
     starship.enable = false;
-    kitty = {
-      colors.enable = false;
-      opacity.enable = false;
-    };
+    kitty.enable = false;
     hyprland.enable = false;
     neovim.enable = false;
   };
