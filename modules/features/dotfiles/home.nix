@@ -25,6 +25,7 @@
       wl-clipboard
       bat
       nautilus
+      satty
       papers
       obsidian
       celluloid
