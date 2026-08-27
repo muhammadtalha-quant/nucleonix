@@ -2,6 +2,10 @@
   programs = {
     kitty = {
       enable = true;
+      font = {
+        name = "JetBrainsMono Nerd Font Mono";
+        size = 14;
+      };
       settings = {
         remember_window_size = true;
         cursor_trail = 1;
