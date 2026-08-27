@@ -3,8 +3,6 @@
     enable = true;
 
     settings = {
-      background-opacity = 0.85000;
-      background-blur = true;
       clipboard-read = "allow";
       clipboard-write = "allow";
       window-decoration = "none";
