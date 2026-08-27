@@ -8,6 +8,7 @@ let
     btop.enable = false;
     cava.enable = false;
     starship.enable = false;
+    hyprland.enable = false;
     neovim.enable = false;
   };
   macchiato = {
