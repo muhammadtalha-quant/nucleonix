@@ -9,6 +9,7 @@ let
     cava.enable = false;
     starship.enable = false;
     hyprland.enable = false;
+    ghostty.opacity.enable = false;
     neovim.enable = false;
   };
   macchiato = {
