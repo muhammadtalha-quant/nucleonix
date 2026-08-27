@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/home/muhammadtalha/nucleonix/modules/features/dotfiles/raw/hypr"
+    ]
+  },
+  "diagnostics": {
+    "globals": [ "hl" ]
+  }
+}
