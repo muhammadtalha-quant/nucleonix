@@ -9,6 +9,7 @@
       clipboard-write = "allow";
       window-decoration = "none";
       window-inherit-working-directory = false;
+      tab-inherit-working-directory = false;
       confirm-close-surface = false;
       copy-on-select = false;
       cursor-style = "bar";
