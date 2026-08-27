@@ -35,7 +35,7 @@ order = [ "default" ]
     concave_edge_corners = false
     contact_shadow = false
     enabled = true
-    end = [ "recorder", "network", "bluetooth", "volume", "brightness", "battery" ]
+    end = [ "screenshot", "recorder", "network", "bluetooth", "volume", "brightness", "battery" ]
     font_family = "JetBrainsMono NFM"
     font_weight = 700
     hover_highlight = false
@@ -562,13 +562,13 @@ time_format = "{:%H:%M}"
 
     [shell.screenshot]
     confirm_region = false
-    copy_to_clipboard = false
-    directory = ""
+    copy_to_clipboard = true
+    directory = "~/Pictures/Screenshots"
     filename_pattern = ""
-    freeze_screen = false
-    pipe_command = ""
-    pipe_to_command = false
-    save_to_file = false
+    freeze_screen = true
+    pipe_command = "satty -f -"
+    pipe_to_command = true
+    save_to_file = true
     show_cursor = false
 
     [shell.session]
@@ -666,7 +666,7 @@ source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "niri" ]
+    builtin_ids = [ "btop", "cava", "hyprland" ]
     community_ids = []
     enable_builtin_templates = true
     enable_community_templates = false
@@ -691,13 +691,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/wheat.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/kaiju.png"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/wheat.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/kaiju.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/wheat.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/kaiju.png"
 
 [weather]
 effects = true
@@ -824,6 +824,9 @@ type = "custom_button"
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
 
+[widget.screenshot.actions]
+middle = "none"
+
 [widget.sleep]
 glyph = "suspend"
 type = "custom_button"
@@ -848,10 +851,6 @@ type = "spacer"
 stat = "cpu_temp"
 type = "sysmon"
 
-[widget.tray]
-drawer = true
-pinned = [ "nm-applet" ]
-type = "tray"
 
 [widget.volume]
 show_label = false
