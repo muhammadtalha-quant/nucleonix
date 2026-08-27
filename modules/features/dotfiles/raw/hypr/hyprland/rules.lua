@@ -1,7 +1,7 @@
 hl.window_rule({ match = { class = "^()$", title = "^()$" }, no_blur = true })
 
 -- Disable blur for every window
-hl.window_rule({ match = { class = ".*" }, no_blur = true })
+-- hl.window_rule({ match = { class = ".*" }, no_blur = true })
 
 -- Floating
 hl.window_rule({ match = { title = "^(Open File)(.*)$" }, center = true })
@@ -39,12 +39,19 @@ hl.window_rule({ match = { class = "com.gabm.satty" }, float = true, center = tr
 
 hl.window_rule({
   match = { class = "dev.noctalia.Noctalia" },
+  float = true,
+  center = true
 })
 -- No shadow for tiled windows
 hl.window_rule({ match = { float = 0 }, no_shadow = true })
 
 -- ######## Workspace rules ########
 hl.workspace_rule({ workspace = "special:special", gaps_out = 20, gaps_in = 5, })
+hl.workspace_rule({ workspace = "1", monitor = "eDP-1", persistent = true })
+hl.workspace_rule({ workspace = "2", monitor = "eDP-1", persistent = true })
+hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true })
+hl.workspace_rule({ workspace = "4", monitor = "eDP-1", persistent = true })
+
 
 -- ######## Layer rules ########
 hl.layer_rule({
