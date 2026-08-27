@@ -46,22 +46,33 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │       ├── home.nix
 │   │       ├── modules
 │   │       │   ├── fish.nix
-│   │       │   ├── ghostty.nix
 │   │       │   ├── git.nix
-│   │       │   ├── niri.nix
+│   │       │   ├── hyprland.nix
+│   │       │   ├── kitty.nix
 │   │       │   ├── nvim.nix
 │   │       │   ├── programs.nix
 │   │       │   └── theming.nix
 │   │       └── raw
 │   │           ├── fastfetch
 │   │           │   └── universal.jsonc
-│   │           ├── niri
-│   │           │   ├── conf
-│   │           │   │   ├── inputs.kdl
-│   │           │   │   ├── keybinds.kdl
-│   │           │   │   ├── monitors.kdl
-│   │           │   │   └── rules.kdl
-│   │           │   └── config.kdl
+│   │           ├── hypr
+│   │           │   ├── hyprland
+│   │           │   │   ├── animations.lua
+│   │           │   │   ├── config.lua
+│   │           │   │   ├── curves.lua
+│   │           │   │   ├── execs.lua
+│   │           │   │   ├── gestures.lua
+│   │           │   │   ├── keybindings
+│   │           │   │   │   ├── applications.lua
+│   │           │   │   │   ├── helpers.lua
+│   │           │   │   │   ├── keys.lua
+│   │           │   │   │   ├── noctalia_ipc.lua
+│   │           │   │   │   ├── windows.lua
+│   │           │   │   │   └── workspaces.lua
+│   │           │   │   ├── keybinds.lua
+│   │           │   │   ├── monitors.lua
+│   │           │   │   └── rules.lua
+│   │           │   └── hyprland.lua
 │   │           ├── noctalia
 │   │           │   ├── latte.toml
 │   │           │   └── macchiato.toml
