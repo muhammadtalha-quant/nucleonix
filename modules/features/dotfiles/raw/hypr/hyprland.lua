@@ -1,4 +1,4 @@
-require("hyprland.execs")
+require("hyprland.events")
 require("hyprland.config")
 require("hyprland.rules")
 require("hyprland.curves")
