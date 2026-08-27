@@ -8,6 +8,10 @@ let
     btop.enable = false;
     cava.enable = false;
     starship.enable = false;
+    kitty = {
+      colors.enable = false;
+      opacity.enable = false;
+    };
     hyprland.enable = false;
     neovim.enable = false;
   };
@@ -68,6 +72,7 @@ let
         },
       }
     '';
+    kitty = "catppuccin-Macchiato";
   };
   latte = {
     spec = {
@@ -126,6 +131,7 @@ let
         },
       }
     '';
+    kitty = "Catppuccin-Latte";
   };
   theme = latte;
 in
@@ -133,4 +139,5 @@ in
   stylix = theme.spec;
   xdg.configFile = theme.symlinks;
   programs.lazyvim.plugins.colorscheme = theme.lazyvim;
+  programs.kitty.themeFile = theme.kitty;
 }
