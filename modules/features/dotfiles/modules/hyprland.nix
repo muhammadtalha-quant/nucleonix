@@ -1,6 +1,6 @@
-{
+{ lib, ... }: {
   xdg.configFile."hypr" = {
-    source = ../raw/hypr;
+    source = lib.mkForce ../raw/hypr;
     recursive = true;
   };
 }
