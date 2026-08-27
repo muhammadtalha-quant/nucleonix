@@ -3,15 +3,16 @@
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-gnome
+      # I know this will be installed with programs.hyprland.enable = true, but being extra cautious is good sometimes.
+      pkgs.xdg-desktop-portal-hyprland
     ];
     config = {
       common = {
         default = [
           "gtk"
         ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
       };
     };
   };

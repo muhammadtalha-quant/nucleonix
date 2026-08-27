@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs = {
-    niri.enable = true;
+    hyprland.enable = true;
     fish.enable = true;
     localsend.enable = true;
     seahorse.enable = true;
