@@ -1,44 +1,39 @@
 local KEYS = require("hyprland.keybindings.keys")
 local helpers = require("hyprland.keybindings.helpers")
 
-for i = 1, 9 do
-    helpers.focus_ws(i)
-end
 
 for i = 1, 9 do
-    helpers.move_window_to_and_focus_ws(i)
-end
-
-for i = 1, 9 do
-    helpers.move_window_to_ws(i)
+  helpers.focus_ws(i)
+  helpers.move_window_to_and_focus_ws(i)
+  helpers.move_window_to_ws(i)
 end
 
 hl.bind(
-    helpers.register(
-        KEYS.MODIFIER.SUPER,
-        KEYS.MODIFIER.ALT, 
-        KEYS.ARROW.RIGHT
-    ),
-    hl.dsp.focus({
-        workspace = "+1"
-    }), 
-    {
-        description = "Switch to workspace right"
-    }
+  helpers.register(
+    KEYS.MODIFIER.SUPER,
+    KEYS.MODIFIER.ALT,
+    KEYS.ARROW.RIGHT
+  ),
+  hl.dsp.focus({
+    workspace = "+1"
+  }),
+  {
+    description = "Switch to workspace right"
+  }
 )
 
 hl.bind(
-    helpers.register(
-        KEYS.MODIFIER.SUPER,
-        KEYS.MODIFIER.ALT,
-        KEYS.ARROW.LEFT
-    ),
-    hl.dsp.focus({
-        workspace = "-1"
-    }), 
-    {
-        description = "Switch to workspace left"
-    }
+  helpers.register(
+    KEYS.MODIFIER.SUPER,
+    KEYS.MODIFIER.ALT,
+    KEYS.ARROW.LEFT
+  ),
+  hl.dsp.focus({
+    workspace = "-1"
+  }),
+  {
+    description = "Switch to workspace left"
+  }
 )
 
 
@@ -46,12 +41,12 @@ hl.bind(
   helpers.register(
     KEYS.MODIFIER.SUPER,
     KEYS.MODIFIER.ALT,
-    KEYS.ALPHABET.S 
+    KEYS.ALPHABET.S
   ),
   hl.dsp.window.move(
-    { 
+    {
       workspace = "special:special",
-      follow = false 
+      follow = false
     }
   ),
   {
@@ -67,7 +62,6 @@ hl.bind(
   ),
   hl.dsp.workspace.toggle_special("special"),
   {
-    description = "Workspace: Toggle scratchpad" 
+    description = "Workspace: Toggle scratchpad"
   }
 )
-
