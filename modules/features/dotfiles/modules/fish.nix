@@ -26,6 +26,7 @@ let
     "777r" = "chmod -R 777";
     snano = "sudo nano";
     mkdir = "mkdir -p";
+    sumkdir = "sudo mkdir -p";
     cp = "cp -rv";
     mv = "mv -v";
     rm = "rm -frv";
