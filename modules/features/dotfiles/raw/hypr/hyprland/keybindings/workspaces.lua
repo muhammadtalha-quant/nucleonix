@@ -45,12 +45,12 @@ hl.bind(
   ),
   hl.dsp.window.move(
     {
-      workspace = "special:special",
+      workspace = "special:scratchpad",
       follow = false
     }
   ),
   {
-    description = "Move Window to scratchpad"
+    description = "Move Window (Silent) to Scratchpad"
   }
 )
 
@@ -58,10 +58,26 @@ hl.bind(
 hl.bind(
   helpers.register(
     KEYS.MODIFIER.SUPER,
+    KEYS.MODIFIER.SHIFT,
     KEYS.ALPHABET.S
   ),
-  hl.dsp.workspace.toggle_special("special"),
+  hl.dsp.window.move(
+    {
+      workspace = "special:scratchpad",
+    }
+  ),
   {
-    description = "Workspace: Toggle scratchpad"
+    description = "Move Window to Scratchpad"
+  }
+)
+
+hl.bind(
+  helpers.register(
+    KEYS.MODIFIER.SUPER,
+    KEYS.ALPHABET.S
+  ),
+  hl.dsp.workspace.toggle_special("scratchpad"),
+  {
+    description = "Toggle Scratchpad"
   }
 )
