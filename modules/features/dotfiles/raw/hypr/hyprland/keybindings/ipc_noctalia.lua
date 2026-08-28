@@ -6,7 +6,6 @@ local non_repeating_ipc_calls = {
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.PUNCTUATION.PERIOD)] = { cmd = "noctalia msg settings-toggle", desc = "Toggle Noctalia Settings" },
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.ALPHABET.V)] = { cmd = "noctalia msg panel-toggle clipboard", desc = "Toggle Clipboard History" },
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.PUNCTUATION.COMMA)] = { cmd = "noctalia msg panel-toggle launcher /e", desc = "Toggle Emoji Selector" },
-  [helpers.register(KEYS.MODIFIER.SUPER, KEYS.ALPHABET.K)] = { cmd = "noctalia msg panel-toggle blackbartblues/keymap:panel view-list", desc = "Toggle Keybinds Cheatsheet" },
   [KEYS.XF86.AUDIOMUTE] = { cmd = "noctalia msg volume-mute", desc = "Toggle Audio Mute" },
   [KEYS.XF86.AUDIOPLAY] = { cmd = "noctalia msg media toggle", desc = "Toggle Audio Play/Pause" },
   [KEYS.SPECIAL.PRINT] = { cmd = "noctalia msg screenshot-region", desc = "Capture Region" },
