@@ -24,11 +24,18 @@
       google-chrome
       wl-clipboard
       bat
-      nautilus
       satty
-      papers
       obsidian
-      celluloid
+      nautilus
+      papers
+      showtime
+      amberol
+      file-roller
+      _7zz
+      zip
+      unzip
+      rar
+      unrar
       loupe
       gh
       eza
