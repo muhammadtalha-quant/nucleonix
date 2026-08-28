@@ -57,12 +57,15 @@ local webapps = {
     cmd = helpers.launch_url_as_webapp("https://mail.google.com/mail/u/0/#inbox"),
     desc = "Open GitHub (My Account)"
   },
-  [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.A)] = {
-    cmd = hl.dsp.submap("ai_mode"),
-    desc = "Launch AI ([o]penai, [c]laude and [g]emini)",
-  },
 }
 
+hl.bind(
+  helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.A),
+  hl.dsp.submap("ai_mode"),
+  {
+    description = "Launch AI ([o]penai, [c]laude and [g]emini)",
+  }
+)
 
 for keybind, app in pairs(apps) do
   hl.bind(
