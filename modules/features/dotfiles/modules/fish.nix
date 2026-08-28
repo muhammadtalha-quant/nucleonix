@@ -47,7 +47,7 @@ let
     cat = "bat";
     nixos-switch = "nh os switch";
     nixos-boot = "nh os boot";
-    nixos-purge-all = "nh clean all --optimise && sudo rm -frv /nix/var/nix/profiles/{system-*,per-user} && sudo mkdir /nix/var/nix/profiles/per-user/{root,${params.userName}} && nh os boot";
+    nixos-purge-all = "nh clean all --optimise; sudo rm -frv /nix/var/nix/profiles/{system-*,per-user/*}; sudo mkdir -p /nix/var/nix/profiles/per-user/{root,${params.userName}}; nh os boot";
     nixos-test = "nh os test";
     nixos-info = "nh os info";
     nixos-rollback = "nh os rollback --to";
