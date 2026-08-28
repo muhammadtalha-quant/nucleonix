@@ -30,7 +30,7 @@ order = [ "default" ]
     capsule_opacity = 1.0
     capsule_padding = 10.0
     capsule_radius = 15.0
-    capsule_thickness = 0.75
+    capsule_thickness = 0.74999998696148396
     center = [ "audio_visualizer", "notifications", "privacy", "clock", "audio_visualizer" ]
     concave_edge_corners = false
     contact_shadow = false
@@ -104,11 +104,14 @@ width = 700
 [desktop_widgets]
 enabled = false
 schema_version = 2
+widget_order = []
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
+
+    [desktop_widgets.widget]
 
 [dock]
 active_monitor_only = false
@@ -460,7 +463,7 @@ show_actions = true
 show_app_name = true
 
 [osd]
-background_opacity = 0.39999997615814209
+background_opacity = 0.4999999888241291
 border = true
 enabled = true
 monitors = []
@@ -469,7 +472,7 @@ offset_y = 8
 orientation = "horizontal"
 position = "top_center"
 position_vertical = "top_center"
-scale = 1.2000000476837158
+scale = 1.2000000104308128
 
     [osd.kinds]
     bluetooth = true
@@ -496,13 +499,11 @@ auto_update = true
 enabled = [ "noctalia/screen_recorder" ]
 
     [[plugins.source]]
-    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
 
     [[plugins.source]]
-    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
@@ -541,7 +542,7 @@ setup_wizard_enabled = true
 shared_gl_context = true
 show_location = true
 telemetry_enabled = false
-time_format = "{:%H:%M}"
+time_format = "{:%I:%M %p}"
 
     [shell.animation]
     enabled = true
@@ -763,6 +764,19 @@ transition_on_startup = false
     interval_seconds = 1800
     order = "random"
     recursive = true
+
+    [wallpaper.default]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/aesthetic.jpg"
+
+    [wallpaper.last]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/aesthetic.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/aesthetic.jpg"
+
+    [[wallpaper.favorite]]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/pitstop.png"
+    theme_mode = "auto"
 
 [weather]
 effects = true
