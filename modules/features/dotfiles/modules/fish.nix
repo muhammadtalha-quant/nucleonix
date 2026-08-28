@@ -61,9 +61,8 @@ let
   ];
 in
 {
-  xdg.configFile."fish/conf.d/fishenv.fish".text = ''
+  xdg.configFile."fish/conf.d/settings.fish".text = ''
     set -U fish_greeting 
-    fish_add_path $HOME/.local/bin
   '';
   programs.fish = {
     enable = true;
