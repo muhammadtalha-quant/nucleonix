@@ -35,7 +35,7 @@
       zip
       unzip
       rar
-      unrar
+      unar
       loupe
       gh
       eza
