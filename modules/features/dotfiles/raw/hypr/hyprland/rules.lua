@@ -44,7 +44,8 @@ hl.window_rule({ match = { class = "com.gabm.satty" }, float = true, center = tr
 hl.window_rule({
   match = { class = "dev.noctalia.Noctalia" },
   float = true,
-  center = true
+  center = true,
+  size = { 1166, 694 }
 })
 -- No shadow for tiled windows
 hl.window_rule({ match = { float = 0 }, no_shadow = true })
