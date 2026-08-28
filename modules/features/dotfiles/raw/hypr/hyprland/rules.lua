@@ -37,6 +37,10 @@ hl.window_rule({ match = { title = ".*is sharing (a window|your screen).*" }, pi
 hl.window_rule({ match = { title = ".*is sharing (a window|your screen).*" }, move = { "(monitor_w*.5-window_w*.5)", "(monitor_h-window_h-12)" } })
 hl.window_rule({ match = { class = "com.gabm.satty" }, float = true, center = true })
 
+-- Tearing
+-- hl.window_rule({... , immediate = true})
+--
+
 hl.window_rule({
   match = { class = "dev.noctalia.Noctalia" },
   float = true,
@@ -46,7 +50,7 @@ hl.window_rule({
 hl.window_rule({ match = { float = 0 }, no_shadow = true })
 
 -- ######## Workspace rules ########
-hl.workspace_rule({ workspace = "special:special", gaps_out = 20, gaps_in = 5, })
+hl.workspace_rule({ workspace = "special:scratchpad", gaps_out = 20, gaps_in = 5, })
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", persistent = true })
 hl.workspace_rule({ workspace = "2", monitor = "eDP-1", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true })
