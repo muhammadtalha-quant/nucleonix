@@ -69,7 +69,7 @@ let
         },
       }
     '';
-    kitty = "catppuccin-Macchiato";
+    kitty = "Catppuccin-Macchiato";
   };
   latte = {
     spec = {
@@ -130,7 +130,7 @@ let
     '';
     kitty = "Catppuccin-Latte";
   };
-  theme = latte;
+  theme = macchiato;
 in
 {
   stylix = theme.spec;
