@@ -14,9 +14,12 @@
     markdownlint-cli2
     markdown-toc
   ];
+
   languages = {
-    nix.enable = true;
-    nix.lsp.package = pkgs.nil;
+    nix = {
+      enable = true;
+      lsp.package = pkgs.nil;
+    };
     lua.enable = true;
   };
 }
