@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ... }@params:
 let
   abbreviations = {
     ls = "eza --icons";
@@ -44,12 +44,12 @@ let
     vi = "nvim";
     vim = "nvim";
     cat = "bat";
-    ns = "nh os switch";
-    nb = "nh os boot";
-    nt = "nh os test";
-    ni = "nh os info";
-    nr = "nh os rollback --to";
-    nfu = "nix flake update --flake $FLAKE_PATH";
+    nixos-switch = "nh os switch";
+    nixos-boot = "nh os boot";
+    nixos-test = "nh os test";
+    nixos-info = "nh os info";
+    nixos-rollback = "nh os rollback --to";
+    nixos-update = "nix flake update --flake $FLAKE_PATH";
   };
   fishPlugins = with pkgs.fishPlugins; [
     {
