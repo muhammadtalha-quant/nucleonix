@@ -25,7 +25,7 @@ hl.config({
     workspace_swipe_create_new = true
   },
   general = {
-    gaps_in = 4,
+    gaps_in = 8,
     gaps_out = 5,
     gaps_workspaces = 50,
 
