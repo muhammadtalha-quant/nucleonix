@@ -15,7 +15,6 @@
 
   fonts.packages = with pkgs; [
     newcomputermodern
-    xwayland-satellite
   ];
   environment = {
     sessionVariables = {
