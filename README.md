@@ -56,17 +56,19 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │           ├── fastfetch
 │   │           │   └── universal.jsonc
 │   │           ├── hypr
+│   │           │   ├── hl.meta.lua
 │   │           │   ├── hyprland
 │   │           │   │   ├── animations.lua
 │   │           │   │   ├── config.lua
 │   │           │   │   ├── curves.lua
-│   │           │   │   ├── execs.lua
+│   │           │   │   ├── events.lua
 │   │           │   │   ├── gestures.lua
 │   │           │   │   ├── keybindings
 │   │           │   │   │   ├── applications.lua
 │   │           │   │   │   ├── helpers.lua
+│   │           │   │   │   ├── ipc_noctalia.lua
 │   │           │   │   │   ├── keys.lua
-│   │           │   │   │   ├── noctalia_ipc.lua
+│   │           │   │   │   ├── submaps.lua
 │   │           │   │   │   ├── windows.lua
 │   │           │   │   │   └── workspaces.lua
 │   │           │   │   ├── keybinds.lua
