@@ -40,8 +40,7 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │   │       ├── programs.nix
 │   │   │       ├── security.nix
 │   │   │       ├── services.nix
-│   │   │       ├── users.nix
-│   │   │       └── xdg.nix
+│   │   │       └── users.nix
 │   │   └── dotfiles
 │   │       ├── home.nix
 │   │       ├── modules
@@ -51,7 +50,8 @@ Nucleonix is my personal configuration based on the very lightweight
 │   │       │   ├── kitty.nix
 │   │       │   ├── nvim.nix
 │   │       │   ├── programs.nix
-│   │       │   └── theming.nix
+│   │       │   ├── theming.nix
+│   │       │   └── xdg.nix
 │   │       └── raw
 │   │           ├── fastfetch
 │   │           │   └── universal.jsonc
