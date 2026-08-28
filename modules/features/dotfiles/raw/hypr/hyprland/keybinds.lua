@@ -1,4 +1,5 @@
 require("hyprland.keybindings.windows")
+require("hyprland.keybindings.submaps")
 require("hyprland.keybindings.workspaces")
 require("hyprland.keybindings.applications")
-require("hyprland.keybindings.noctalia_ipc")
+require("hyprland.keybindings.ipc_noctalia")
