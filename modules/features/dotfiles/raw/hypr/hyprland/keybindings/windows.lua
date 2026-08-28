@@ -36,16 +36,14 @@ hl.bind(
 )
 
 hl.bind(
-    helpers.register(
-        KEYS.MODIFIER.SUPER,
-        KEYS.ARROW.LEFT
-    ),
-    hl.dsp.focus({
-        direction = "left"
-    }),
-    {
-        description = "Focus Window Left"
-    }
+  helpers.register(
+    KEYS.MODIFIER.SUPER,
+    KEYS.ALPHABET.P
+  ),
+  hl.dsp.window.pin(),
+  {
+    description = "Toggle [Un]pin Floating Windows"
+  }
 )
 
 hl.bind(
