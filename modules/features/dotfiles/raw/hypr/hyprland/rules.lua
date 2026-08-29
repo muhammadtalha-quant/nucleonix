@@ -37,6 +37,8 @@ hl.window_rule({ match = { title = ".*is sharing (a window|your screen).*" }, pi
 hl.window_rule({ match = { title = ".*is sharing (a window|your screen).*" }, move = { "(monitor_w*.5-window_w*.5)", "(monitor_h-window_h-12)" } })
 hl.window_rule({ match = { class = "com.gabm.satty" }, float = true, center = true })
 
+hl.window_rule({ match = { title = "Select what to share" }, float = true, center = true, size = { 764, 561 } })
+
 -- Tearing
 -- hl.window_rule({... , immediate = true})
 --
