@@ -1,7 +1,7 @@
 local KEYS = require("hyprland.keybindings.keys")
 local helpers = require("hyprland.keybindings.helpers")
 
-helpers.register_submap("ai_mode", function()
+hl.define_submap("ai_mode", function()
   local clankers = {
     [KEYS.ALPHABET.O] = "https://chatgpt.com",
     [KEYS.ALPHABET.C] = "https://claude.ai",
@@ -11,8 +11,8 @@ helpers.register_submap("ai_mode", function()
     hl.bind(
       bind,
       function()
-        helpers.launch_url_as_webapp(clanker_site)
-        hl.dsp.submap("reset")
+        hl.dispatch(hl.dsp.exec_cmd(helpers.url_as_webapp(clanker_site)))
+        hl.dispatch(hl.dsp.submap("reset"))
       end
     )
   end
