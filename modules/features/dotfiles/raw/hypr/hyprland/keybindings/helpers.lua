@@ -53,12 +53,8 @@ function M.move_window_to_ws(workspace_id)
   )
 end
 
-function M.launch_url_as_webapp(url)
+function M.url_as_webapp(url)
   return "google-chrome --app=" .. url
-end
-
-function M.register_submap(submap_name, submap_bindings)
-  hl.define_submap(submap_name, submap_bindings)
 end
 
 return M

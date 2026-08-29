@@ -34,27 +34,27 @@ local apps = {
 
 local webapps = {
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.Y)] = {
-    cmd = helpers.launch_url_as_webapp("https://youtube.com"),
+    cmd = helpers.url_as_webapp("https://youtube.com"),
     desc = "Open Youtube"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.W)] = {
-    cmd = helpers.launch_url_as_webapp("https://web.whatsapp.com"),
+    cmd = helpers.url_as_webapp("https://web.whatsapp.com"),
     desc = "Open Whatsapp"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.O)] = {
-    cmd = helpers.launch_url_as_webapp("https://docs.google.com/document/u/0/"),
+    cmd = helpers.url_as_webapp("https://docs.google.com/document/u/0/"),
     desc = "Open Google Office Suite"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.D)] = {
-    cmd = helpers.launch_url_as_webapp("https://discord.com"),
+    cmd = helpers.url_as_webapp("https://discord.com"),
     desc = "Open Discord"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.G)] = {
-    cmd = helpers.launch_url_as_webapp("https://github.com/muhammadtalha-quant"),
+    cmd = helpers.url_as_webapp("https://github.com/muhammadtalha-quant"),
     desc = "Open GitHub (My Account)"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.M)] = {
-    cmd = helpers.launch_url_as_webapp("https://mail.google.com/mail/u/0/#inbox"),
+    cmd = helpers.url_as_webapp("https://mail.google.com/mail/u/0/#inbox"),
     desc = "Open GitHub (My Account)"
   },
 }
