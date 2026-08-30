@@ -1,0 +1,10 @@
+require("hyprland.events")
+require("hyprland.config")
+require("hyprland.rules")
+require("hyprland.curves")
+require("hyprland.animations")
+require("hyprland.monitors")
+require("hyprland.gestures")
+require("hyprland.keybinds")
+
+require("noctalia")

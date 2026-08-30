@@ -1,0 +1,3 @@
+*.lua  linguist-detectable=false
+*.json linguist-detectable=false
+*.toml linguist-detectable=false

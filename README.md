@@ -1,158 +1,46 @@
-# Nucleonix: NixOS Configuration Based on Nucleus Architecture
+# Nucleonix
 
-<!--toc:start-->
+A lightweight and multi-host native NixOS configuration based on [Nucleus Architecture](https://github.com/muhammadtalha-quant/nucleus).
 
-- [Nucleonix: NixOS Configuration Based on Nucleus Architecture](#nucleonix-nixos-configuration-based-on-nucleus-architecture)
-  - [Tree Structure](#tree-structure)
-  - [Reproduction of Setup](#reproduction-of-setup)
-    - [Clone The Template Repository](#clone-the-template-repository)
-    - [Preparation and Installation](#preparation-and-installation)
-  - [LICENSE](#license)
+## The Look and Feel of Nucleonix
 
-<!--toc:end-->
+Nucleonix comes with the iconic Catppuccin color palette.
 
-Nucleonix is my personal configuration based on the very lightweight
-[nucleus architecture](https://github.com/muhammadtalha-quant/nucleus-template).
+- For light mode, it uses Catppuccin Latte with ![Static Badge](https://img.shields.io/badge/-m?logoColor=%238839ef&labelColor=%238839ef&color=%238839ef) as primary accent.
+- For dark mode, it uses Catppuccin Macchiato with ![Static Badge](https://img.shields.io/badge/-m?logoColor=%23c6a0f6&labelColor=%23c6a0f6&color=%23c6a0f6) as primary accent.
 
-## Tree Structure
+### See it in Action
 
-```text
-.
-├── devenv.lock
-├── devenv.nix
-├── devenv.yaml
-├── flake.lock
-├── flake.nix
-├── LICENSE
-├── modules
-│   ├── common
-│   │   └── disko.nix
-│   ├── features
-│   │   ├── configuration
-│   │   │   ├── configuration.nix
-│   │   │   └── modules
-│   │   │       ├── bootloader.nix
-│   │   │       ├── hardware.nix
-│   │   │       ├── i18n.nix
-│   │   │       ├── networking.nix
-│   │   │       ├── nh.nix
-│   │   │       ├── nix.nix
-│   │   │       ├── programs.nix
-│   │   │       ├── security.nix
-│   │   │       ├── services.nix
-│   │   │       ├── users.nix
-│   │   │       └── xdg.nix
-│   │   └── dotfiles
-│   │       ├── home.nix
-│   │       ├── modules
-│   │       │   ├── fish.nix
-│   │       │   ├── ghostty.nix
-│   │       │   ├── git.nix
-│   │       │   ├── niri.nix
-│   │       │   ├── nvim.nix
-│   │       │   ├── programs.nix
-│   │       │   └── theming.nix
-│   │       └── raw
-│   │           ├── fastfetch
-│   │           │   └── universal.jsonc
-│   │           ├── niri
-│   │           │   ├── conf
-│   │           │   │   ├── inputs.kdl
-│   │           │   │   ├── keybinds.kdl
-│   │           │   │   ├── monitors.kdl
-│   │           │   │   └── rules.kdl
-│   │           │   └── config.kdl
-│   │           ├── noctalia
-│   │           │   ├── latte.toml
-│   │           │   └── macchiato.toml
-│   │           └── starship
-│   │               ├── latte.toml
-│   │               └── macchiato.toml
-│   └── hosts
-│       └── hp-probook-430g2
-│           ├── default.nix
-│           └── hardware-configuration.nix
-└── README.md
-```
+<div align="center">
 
-## Reproduction of Setup
+<https://github.com/user-attachments/assets/e2a38e2e-8ca4-4653-8750-f7f83135b34d>
 
-I would follow these exact steps in sequence if I had to reproduce my exact
-setup.
+</div>
 
-### Clone The Template Repository
-
-- Clone the template repository
-  - Enter root mode as suggested in the NixOS Manual.
-  - Since `git` is not available in the minimal ISO of NixOS, we have to
-    temporarily install it.
-  - Clone the repository.
-  - Exit the fake shell, in which git was installed.
-  - Remove the `.git` directory, so that the process doesn't throw errors errors
-    regarding impurity.
-
-```bash
-sudo -i 
-nix-shell -p git 
-git clone https://github.com/muhammadtalha-quant/nucleonix.git
-exit 
-cd nucleonix/ 
-rm -rf .git
-```
-
-### Preparation and Installation
-
-- Know about my disk by running the following command.
-
-```bash
-lsblk
-```
-
-- Open **flake.nix** and do necessary changes according to my requirements.
-
-```bash
-nano flake.nix
-```
-
-- Run disko to handle formatting, partitioning and mounting of my disk.
-
-```bash
-sudo nix --experimental-features \
-     "nix-command flakes" run github:nix-community/disko/latest -- \
-     --mode destroy,format,mount \
-     --flake .#host
-```
-
-> [!IMPORTANT]
-> If my host is laptop, I will check out
-> [services.nix](modules/features/configuration/modules/services.nix) and enable
-> power management services.
-
-- Installing NixOS
-  - Go to parent directory of template repo.
-  - Move repository to `/mnt` so that it is available after installation.
-  - Change directory to repository in the new location.
-  - Generate configuration in the `host` directory.
-  - Remove the generated `configuration.nix` stub.
-  - Install NixOS from the modified template and do not prompt for root
-    password.
-
-```bash
-cd .. 
-mv nucleonix /mnt/
-cd /mnt/nucleonix/
-nixos-generate-config --root . --dir modules/hosts/host/ --no-filesystems
-rm modules/hosts/host/configuration.nix
-nixos-install --flake .#host --no-root-passwd
-```
-
-> [!CAUTION]
-> The above steps will only work for me. If you want to reproduce my exact
-> system, you should definitely read the
-> [**documentation**](https://github.com/muhammadtalha-quant/nucleonix/blob/main/README.md)
-> of my
-> [**nucleus architecture**](https://github.com/muhammadtalha-quant/nucleus-template)
-
-## LICENSE
-
-MIT License
+<details>
+  <summary>
+    <strong>More Screenshots</strong>
+  </summary>
+  <blockquote>
+    <details>
+    <summary><strong>Catppuccin Latte</strong></summary>
+    <div align="center">
+      <img width="600"  alt="screenshot_20260902_102340" src="https://github.com/user-attachments/assets/5731f81b-2204-4c3e-90f6-25322a9a5d17" />
+      <img width="600"  alt="screenshot_20260902_102450" src="https://github.com/user-attachments/assets/99e41f7a-8a1f-4746-8885-c7a4f8b41201" />
+      <img width="600"  alt="screenshot_20260902_102437" src="https://github.com/user-attachments/assets/245f15c2-96aa-4c25-b969-100f107d7130" />
+      <img width="600"  alt="screenshot_20260902_102419" src="https://github.com/user-attachments/assets/1e05fbda-8989-4400-8fb7-339aca0c0cfa" />
+      <img width="600"  alt="screenshot_20260902_102403" src="https://github.com/user-attachments/assets/02e6dd59-cff2-44e2-93d3-191a91359176" />
+    </div>
+  </details>
+  <details>
+    <summary><strong>Catppuccin Macchiato</strong></summary>
+    <div align="center">
+      <img width="600"  alt="screenshot_20260902_122012" src="https://github.com/user-attachments/assets/7018161f-b1e4-4da5-b6fb-a731f41cd87d" />
+      <img width="600"  alt="screenshot_20260902_122221" src="https://github.com/user-attachments/assets/d14da63d-057e-4e0c-b78b-e2aa5ee23f67" />
+      <img width="600"  alt="screenshot_20260902_122207" src="https://github.com/user-attachments/assets/7d0b44c4-66f5-452f-82e1-af9fb43961b1" />
+      <img width="600"  alt="screenshot_20260902_122029" src="https://github.com/user-attachments/assets/3c9eb2bc-4400-4ac0-8444-9a5c0badb946" />
+      <img width="600"  alt="screenshot_20260902_122019" src="https://github.com/user-attachments/assets/5ffe8942-c415-49ec-aa95-980dadfcb7da" />
+    </div>
+  </details>
+</blockquote>
+</details>

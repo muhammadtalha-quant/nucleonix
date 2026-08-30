@@ -14,9 +14,17 @@
     markdownlint-cli2
     markdown-toc
   ];
+
   languages = {
-    nix.enable = true;
-    nix.lsp.package = pkgs.nil;
+    nix = {
+      enable = true;
+      lsp.package = pkgs.nil;
+    };
     lua.enable = true;
+  };
+  scripts = {
+    compile.exec = "nh os boot";
+    apply.exec = "nh os test";
+    deploy.exec = "nh os switch";
   };
 }

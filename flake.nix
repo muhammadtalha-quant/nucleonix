@@ -39,6 +39,7 @@
       locale = "en_US.UTF-8";
       hashedUserPassword = "$y$j9T$T/fyOwJSnwDN5vhbYvxOU0$xWmn12BoAIyDVChelEt7LyhGHQTMlJjd/5OEuy6Ud65";
       hashedRootPassword = "$y$j9T$CXXX951qyBSRGHfHxZ8E01$ooy/jGSGAqWqdNQ0WA9pMbjibDGYoA2jsmDU8GJhbv2";
+      stateVersion = "26.05";
 
       # !=== FLAKE CONFIG ===!
       system = "x86_64-linux";
@@ -57,10 +58,22 @@
       configDirectory = "/home/${userName}/nucleonix/";
 
       # !=== SYNCTHING CONFIG ===!
-      deviceID = "7XVOG6S-6BTWJNS-MHZ4QLW-YG4NWLD-JHD7ODT-ANKSLBW-CQMTKVZ-PAYT2QV";
+      devices = {
+        myphone = {
+          id = "7XVOG6S-6BTWJNS-MHZ4QLW-YG4NWLD-JHD7ODT-ANKSLBW-CQMTKVZ-PAYT2QV";
+          addresses = [ "dynamic" ];
+        };
+      };
+      folders = {
+        "/home/${userName}/sync" = {
+          enable = true;
+          id = "sync";
+          devices = [ "myphone" ];
+        };
+      };
     in
     {
-      diskoConfigurations.${hostName} = import ./modules/common/disko.nix {
+      diskoConfigurations.${hostName} = import ./modules/common/disko/laptop.nix {
         inherit storageDevice;
         inherit swapSize;
       };
@@ -70,6 +83,7 @@
           inherit userName;
           inherit hashedRootPassword;
           inherit hashedUserPassword;
+          inherit stateVersion;
           inherit realName; # for user desc
           inherit hostName;
           inherit timeZone;
@@ -77,24 +91,28 @@
           inherit storageDevice;
           inherit locale;
           inherit swapSize;
-          inherit deviceID;
+          inherit devices;
+          inherit folders;
           inherit pkgs-unstable;
           inherit inputs;
         };
         modules = [
-          ./modules/features/configuration/configuration.nix
+          ./modules/common/nixos-core/core.nix
+          ./modules/features/workstation/workstation.nix
+          ./modules/hosts/${hostName}/default.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.${userName} = import ./modules/features/dotfiles/home.nix;
+              users.${userName} = import ./modules/features/home-manager/home.nix;
               backupFileExtension = "backup";
               extraSpecialArgs = {
                 inherit inputs;
                 inherit userName;
                 inherit stylix;
                 inherit realName;
+                inherit stateVersion;
                 inherit gpgKey;
                 inherit lazyvim;
                 inherit pkgs-unstable;
@@ -103,7 +121,7 @@
             };
           }
           disko.nixosModules.disko
-          ./modules/common/disko.nix
+          ./modules/common/disko/laptop.nix
         ];
       };
     };
