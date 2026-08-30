@@ -22,4 +22,9 @@
     };
     lua.enable = true;
   };
+  scripts = {
+    compile.exec = "nh os boot";
+    apply.exec = "nh os test";
+    deploy.exec = "nh os switch";
+  };
 }
