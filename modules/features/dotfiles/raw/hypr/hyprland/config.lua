@@ -29,7 +29,7 @@ hl.config({
     gaps_out = 8,
     gaps_workspaces = 50,
 
-    border_size = 1,
+    border_size = 3,
 
     resize_on_border = true,
 
@@ -52,6 +52,7 @@ hl.config({
       new_optimizations = true,
       size = 9,
       passes = 2,
+      ignore_opacity = true,
       brightness = 1,
       noise = 0.05,
       contrast = 0.89,
