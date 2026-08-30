@@ -30,7 +30,7 @@ order = [ "default" ]
     capsule_opacity = 1.0
     capsule_padding = 10.0
     capsule_radius = 15.0
-    capsule_thickness = 0.74999998696148396
+    capsule_thickness = 0.75
     center = [ "audio_visualizer", "notifications", "privacy", "clock", "audio_visualizer" ]
     concave_edge_corners = false
     contact_shadow = false
@@ -104,14 +104,11 @@ width = 700
 [desktop_widgets]
 enabled = false
 schema_version = 2
-widget_order = []
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
-
-    [desktop_widgets.widget]
 
 [dock]
 active_monitor_only = false
@@ -201,6 +198,7 @@ pre_action_fade_seconds = 5.0
     action = "lock"
     command = ""
     enabled = true
+    locked_timeout = 0.0
     resume_command = ""
     timeout = 600.0
 
@@ -208,6 +206,7 @@ pre_action_fade_seconds = 5.0
     action = "lock_and_suspend"
     command = ""
     enabled = true
+    locked_timeout = 0.0
     resume_command = ""
     timeout = 900.0
 
@@ -215,6 +214,7 @@ pre_action_fade_seconds = 5.0
     action = "screen_off"
     command = ""
     enabled = true
+    locked_timeout = 0.0
     resume_command = ""
     timeout = 660.0
 
@@ -240,13 +240,13 @@ sunset = ""
 
 [lockscreen]
 allow_empty_password = true
-blur_intensity = 0.5
-blurred_desktop = true
+blur_intensity = 0.84999996423721313
+blurred_desktop = false
 enabled = true
 fingerprint = true
 lock_before_suspend = true
-monitors = [ "eDP-1" ]
-tint_intensity = 0.30000001192092896
+monitors = []
+tint_intensity = 0.64999997615814209
 wallpaper = ""
 
 [lockscreen_widgets]
@@ -257,11 +257,7 @@ widget_order = [
     "lockscreen-login-box@eDP-1",
     "lockscreen-widget-0000000000000001",
     "lockscreen-widget-0000000000000002",
-    "lockscreen-widget-0000000000000003",
-    "lockscreen-widget-0000000000000004",
-    "lockscreen-widget-0000000000000005",
-    "lockscreen-widget-0000000000000007",
-    "lockscreen-widget-0000000000000008"
+    "lockscreen-widget-0000000000000005"
 ]
 
     [lockscreen_widgets.grid]
@@ -298,10 +294,10 @@ widget_order = [
         show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 70.0
-    box_width = 376.9140625
+    box_height = 196.0
+    box_width = 810.0
     cx = 683.0
-    cy = 547.1875
+    cy = 539.37890625
     enabled = true
     output = "eDP-1"
     placement_height = 768.0
@@ -310,20 +306,20 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "secondary"
         background_opacity = 0.0
         background_radius = 0.0
         center_password_text = true
-        input_opacity = 0.20000000000000001
-        input_radius = 16.0
-        layout = "compact"
+        input_opacity = 0.0
+        input_radius = 19.0
+        layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = false
-        show_media = false
-        show_session_buttons = false
+        show_media = true
+        show_session_buttons = true
         show_unlock_hint = false
-        show_weather = false
+        show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 184.73828125
@@ -345,58 +341,25 @@ widget_order = [
         timezone = "Asia/Karachi"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-    box_height = 39.38671875
-    box_width = 317.4453125
-    cx = 683.0
-    cy = 546.880859375
+    box_height = 40.179698944091797
+    box_width = 828.42578125
+    cx = 681.962890625
+    cy = 552.1171875
     enabled = true
     output = "eDP-1"
     placement_height = 768.0
     placement_width = 1366.0
-    rotation = 0.0
+    rotation = -3.1415927410125732
     type = "audio_visualizer"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
         background = false
-        bands = 104
+        bands = 120
         centered = false
         color_1 = "primary"
         color_2 = "secondary"
+        reversed = false
         show_when_idle = false
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 142.05078125
-    box_width = 236.28125
-    cx = 120.19921875
-    cy = 55.787109375
-    enabled = true
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "weather"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
-        background = false
-        font_family = "DejaVu Sans Mono"
-        show_forecast = false
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-    box_height = 128.75
-    box_width = 284.48828125
-    cx = 683.0
-    cy = 673.14453125
-    enabled = true
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "media_player"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
-        background = false
-        hide_when_no_media = true
-        layout = "horizontal"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
     box_height = 45.30859375
@@ -413,50 +376,6 @@ widget_order = [
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
         background = false
         format = "{:%d/%m/%y}"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
-    box_height = 48.0
-    box_width = 64.0
-    cx = 1259.0
-    cy = 24.0
-    enabled = true
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "sysmon"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
-        background = false
-        display = "gauge"
-        gauge_layout = "horizontal"
-        label_min_width = 0
-        shadow = true
-        show_label = false
-        stat = "ram_pct"
-        stat2 = "cpu_temp"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
-    box_height = 48.0
-    box_width = 64.0
-    cx = 1332.0078125
-    cy = 22.734375
-    enabled = true
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = 0.0
-    type = "sysmon"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
-        background = false
-        display = "gauge"
-        gauge_layout = "horizontal"
-        label_min_width = 0
-        shadow = true
-        show_label = false
-        stat = "cpu_usage"
-        stat2 = "cpu_temp"
 
 [nightlight]
 enabled = false
@@ -481,7 +400,7 @@ show_actions = true
 show_app_name = true
 
 [osd]
-background_opacity = 0.4999999888241291
+background_opacity = 0.5
 border = true
 enabled = true
 monitors = []
@@ -490,7 +409,7 @@ offset_y = 8
 orientation = "horizontal"
 position = "top_center"
 position_vertical = "top_center"
-scale = 1.2000000104308128
+scale = 1.2000000476837158
 
     [osd.kinds]
     bluetooth = true
@@ -517,6 +436,7 @@ auto_update = "official"
 enabled = [ "noctalia/screen_recorder" ]
 
     [[plugins.source]]
+    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
@@ -578,7 +498,10 @@ time_format = "{:%I:%M %p}"
     categories = false
     compact = false
     fetch_exchange_rates = false
+    pinned = []
     provider_prefix = "/"
+    show_app_actions = false
+    show_app_origin_indicator = true
     show_icons = true
     sort_by_usage = true
 
@@ -751,13 +674,13 @@ swap_pct_activity_threshold = 20.0
 swap_pct_critical_threshold = 80.0
 
 [theme]
-builtin = "Catppuccin"
+builtin = "Ayu"
 community_palette = "Catppuccin Macchiato Mauve"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
 source = "community"
-wallpaper_scheme = "m3-content"
+wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "hyprland" ]
@@ -783,19 +706,6 @@ transition_on_startup = false
     interval_seconds = 1800
     order = "random"
     recursive = true
-
-    [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/my-neighbor-totoro-sunflowers.png"
-
-    [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/my-neighbor-totoro-sunflowers.png"
-
-    [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/my-neighbor-totoro-sunflowers.png"
-
-    [[wallpaper.favorite]]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/pitstop.png"
-    theme_mode = "auto"
 
 [weather]
 effects = true
