@@ -1,17 +1,17 @@
 {
   userName,
-  deviceID,
+  folders,
+  devices,
   ...
 }:
 {
   services = {
-    power-profiles-daemon.enable = true;
-    upower.enable = true;
+    power-profiles-daemon.enable = true; # for laptops
+    upower.enable = true; # for laptops
     fprintd.enable = true;
     udisks2.enable = true;
     gnome.gnome-keyring.enable = true;
     gvfs.enable = true;
-    dbus.enable = true;
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
@@ -30,19 +30,9 @@
       overrideFolders = true;
       group = "users";
       settings = {
-        folders = {
-          "/home/${userName}/sync" = {
-            enable = true;
-            id = "sync";
-            devices = [ "myphone" ];
-          };
-        };
-        devices = {
-          myphone.id = deviceID;
-          myphone.addresses = [ "dynamic" ];
-        };
+        inherit folders;
+        inherit devices;
       };
-
     };
   };
 }

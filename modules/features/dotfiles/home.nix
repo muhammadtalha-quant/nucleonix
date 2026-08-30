@@ -2,6 +2,7 @@
   pkgs,
   pkgs-unstable,
   inputs,
+  stateVersion,
   userName,
   stylix,
   lazyvim,
@@ -21,6 +22,7 @@
     pointerCursor.enable = true;
     homeDirectory = "/home/${userName}";
     packages = with pkgs; [
+      newcomputermodern
       pipes
       cmatrix
       google-chrome
@@ -44,7 +46,7 @@
       pkgs-unstable.devenv
       pkgs-unstable.noctalia
     ];
-    stateVersion = "26.05";
+    inherit stateVersion;
   };
 
 }
