@@ -1,16 +1,5 @@
 # Nucleonix: NixOS Configuration Based on Nucleus Architecture
 
-<!--toc:start-->
-
-- [Nucleonix: NixOS Configuration Based on Nucleus Architecture](#nucleonix-nixos-configuration-based-on-nucleus-architecture)
-  - [Tree Structure](#tree-structure)
-  - [Reproduction of Setup](#reproduction-of-setup)
-    - [Clone The Template Repository](#clone-the-template-repository)
-    - [Preparation and Installation](#preparation-and-installation)
-  - [LICENSE](#license)
-
-<!--toc:end-->
-
 Nucleonix is my personal configuration based on the very lightweight
 [nucleus architecture](https://github.com/muhammadtalha-quant/nucleus-template).
 
@@ -26,61 +15,68 @@ Nucleonix is my personal configuration based on the very lightweight
 ├── LICENSE
 ├── modules
 │   ├── common
-│   │   └── disko.nix
+│   │   ├── disko
+│   │   │   └── laptop.nix
+│   │   └── nixos-core
+│   │       ├── core.nix
+│   │       └── modules
+│   │           ├── bootloader.nix
+│   │           ├── i18n.nix
+│   │           ├── networking.nix
+│   │           ├── nh.nix
+│   │           ├── nix.nix
+│   │           └── users.nix
 │   ├── features
-│   │   ├── configuration
-│   │   │   ├── configuration.nix
-│   │   │   └── modules
-│   │   │       ├── bootloader.nix
-│   │   │       ├── hardware.nix
-│   │   │       ├── i18n.nix
-│   │   │       ├── networking.nix
-│   │   │       ├── nh.nix
-│   │   │       ├── nix.nix
-│   │   │       ├── programs.nix
-│   │   │       ├── security.nix
-│   │   │       ├── services.nix
-│   │   │       └── users.nix
-│   │   └── dotfiles
-│   │       ├── home.nix
+│   │   ├── dotfiles
+│   │   │   ├── home.nix
+│   │   │   ├── modules
+│   │   │   │   ├── fish.nix
+│   │   │   │   ├── git.nix
+│   │   │   │   ├── hyprland.nix
+│   │   │   │   ├── kitty.nix
+│   │   │   │   ├── nvim.nix
+│   │   │   │   ├── programs.nix
+│   │   │   │   ├── theming.nix
+│   │   │   │   └── xdg.nix
+│   │   │   └── raw
+│   │   │       ├── fastfetch
+│   │   │       │   └── universal.jsonc
+│   │   │       ├── hypr
+│   │   │       │   ├── hl.meta.lua
+│   │   │       │   ├── hyprland
+│   │   │       │   │   ├── animations.lua
+│   │   │       │   │   ├── config.lua
+│   │   │       │   │   ├── curves.lua
+│   │   │       │   │   ├── events.lua
+│   │   │       │   │   ├── gestures.lua
+│   │   │       │   │   ├── keybindings
+│   │   │       │   │   │   ├── applications.lua
+│   │   │       │   │   │   ├── helpers.lua
+│   │   │       │   │   │   ├── ipc_noctalia.lua
+│   │   │       │   │   │   ├── keys.lua
+│   │   │       │   │   │   ├── submaps.lua
+│   │   │       │   │   │   ├── windows.lua
+│   │   │       │   │   │   └── workspaces.lua
+│   │   │       │   │   ├── keybinds.lua
+│   │   │       │   │   ├── monitors.lua
+│   │   │       │   │   └── rules.lua
+│   │   │       │   └── hyprland.lua
+│   │   │       ├── noctalia
+│   │   │       │   ├── latte.toml
+│   │   │       │   └── macchiato.toml
+│   │   │       └── starship
+│   │   │           ├── latte.toml
+│   │   │           └── macchiato.toml
+│   │   └── workstation
 │   │       ├── modules
-│   │       │   ├── fish.nix
-│   │       │   ├── git.nix
-│   │       │   ├── hyprland.nix
-│   │       │   ├── kitty.nix
-│   │       │   ├── nvim.nix
+│   │       │   ├── environment.nix
+│   │       │   ├── hardware.nix
+│   │       │   ├── networking.nix
 │   │       │   ├── programs.nix
-│   │       │   ├── theming.nix
-│   │       │   └── xdg.nix
-│   │       └── raw
-│   │           ├── fastfetch
-│   │           │   └── universal.jsonc
-│   │           ├── hypr
-│   │           │   ├── hl.meta.lua
-│   │           │   ├── hyprland
-│   │           │   │   ├── animations.lua
-│   │           │   │   ├── config.lua
-│   │           │   │   ├── curves.lua
-│   │           │   │   ├── events.lua
-│   │           │   │   ├── gestures.lua
-│   │           │   │   ├── keybindings
-│   │           │   │   │   ├── applications.lua
-│   │           │   │   │   ├── helpers.lua
-│   │           │   │   │   ├── ipc_noctalia.lua
-│   │           │   │   │   ├── keys.lua
-│   │           │   │   │   ├── submaps.lua
-│   │           │   │   │   ├── windows.lua
-│   │           │   │   │   └── workspaces.lua
-│   │           │   │   ├── keybinds.lua
-│   │           │   │   ├── monitors.lua
-│   │           │   │   └── rules.lua
-│   │           │   └── hyprland.lua
-│   │           ├── noctalia
-│   │           │   ├── latte.toml
-│   │           │   └── macchiato.toml
-│   │           └── starship
-│   │               ├── latte.toml
-│   │               └── macchiato.toml
+│   │       │   ├── security.nix
+│   │       │   ├── services.nix
+│   │       │   └── users.nix
+│   │       └── workstation.nix
 │   └── hosts
 │       └── hp-probook-430g2
 │           ├── default.nix
@@ -93,7 +89,7 @@ Nucleonix is my personal configuration based on the very lightweight
 I would follow these exact steps in sequence if I had to reproduce my exact
 setup.
 
-### Clone The Template Repository
+### Clone The Configuration Repository
 
 - Clone the template repository
   - Enter root mode as suggested in the NixOS Manual.
