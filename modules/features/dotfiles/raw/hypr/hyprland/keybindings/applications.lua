@@ -29,14 +29,7 @@ local apps = {
   }
 }
 
-
-
-
 local webapps = {
-  [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.Y)] = {
-    cmd = helpers.url_as_webapp("https://youtube.com"),
-    desc = "Open Youtube"
-  },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.W)] = {
     cmd = helpers.url_as_webapp("https://web.whatsapp.com"),
     desc = "Open Whatsapp"
@@ -55,9 +48,18 @@ local webapps = {
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.M)] = {
     cmd = helpers.url_as_webapp("https://mail.google.com/mail/u/0/#inbox"),
-    desc = "Open GitHub (My Account)"
+    desc = "Open GMail Inbox"
   },
 }
+
+
+hl.bind(
+  helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.S),
+  hl.dsp.submap("socialmedia"),
+  {
+    description = "Launch Social Media ([y]outube, [f]acebook, [r]eddit, [i]nstagram and [t]iktok)",
+  }
+)
 
 hl.bind(
   helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.A),
