@@ -21,6 +21,8 @@
     pointerCursor.enable = true;
     homeDirectory = "/home/${userName}";
     packages = with pkgs; [
+      pipes
+      cmatrix
       google-chrome
       wl-clipboard
       bat
