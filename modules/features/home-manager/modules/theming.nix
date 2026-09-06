@@ -9,6 +9,7 @@ let
     starship.enable = false;
     kitty.enable = false;
     hyprland.enable = false;
+    noctalia.enable = false;
     neovim.enable = false;
   };
   macchiato = {
