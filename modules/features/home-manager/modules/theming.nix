@@ -1,15 +1,15 @@
 {
   pkgs,
-  lib,
   ...
 }:
 let
-  disabledTargetsStylix = {
+  stylixTargets = {
     btop.enable = false;
     cava.enable = false;
     starship.enable = false;
     kitty.enable = false;
     hyprland.enable = false;
+    noctalia.enable = false;
     neovim.enable = false;
   };
   macchiato = {
@@ -52,12 +52,7 @@ let
         package = pkgs.catppuccin-cursors.macchiatoMauve;
         size = 26;
       };
-      targets = disabledTargetsStylix;
-    };
-    symlinks = {
-      "fastfetch/config.jsonc".source = lib.mkForce ../dotfiles/fastfetch/universal.jsonc;
-      "starship.toml".source = lib.mkForce ../dotfiles/starship/macchiato.toml;
-      "noctalia/config.toml".source = lib.mkForce ../dotfiles/noctalia/macchiato.toml;
+      targets = stylixTargets;
     };
     lazyvim = ''
       return {
@@ -69,6 +64,8 @@ let
         },
       }
     '';
+    noctalia = ../dotfiles/noctalia/macchiato.toml;
+    starship = builtins.fromTOML (builtins.readFile ../dotfiles/starship/macchiato.toml);
     kitty = "Catppuccin-Macchiato";
   };
   latte = {
@@ -111,12 +108,7 @@ let
         package = pkgs.catppuccin-cursors.latteMauve;
         size = 26;
       };
-      targets = disabledTargetsStylix;
-    };
-    symlinks = {
-      "fastfetch/config.jsonc".source = lib.mkForce ../dotfiles/fastfetch/universal.jsonc;
-      "starship.toml".source = lib.mkForce ../dotfiles/starship/latte.toml;
-      "noctalia/config.toml".source = lib.mkForce ../dotfiles/noctalia/latte.toml;
+      targets = stylixTargets;
     };
     lazyvim = ''
       return {
@@ -128,13 +120,18 @@ let
         },
       }
     '';
+    noctalia = ../dotfiles/noctalia/latte.toml;
+    starship = builtins.fromTOML (builtins.readFile ../dotfiles/starship/latte.toml);
     kitty = "Catppuccin-Latte";
   };
   theme = macchiato;
 in
 {
   stylix = theme.spec;
-  xdg.configFile = theme.symlinks;
-  programs.lazyvim.plugins.colorscheme = theme.lazyvim;
-  programs.kitty.themeFile = theme.kitty;
+  programs = {
+    lazyvim.plugins.colorscheme = theme.lazyvim;
+    kitty.themeFile = theme.kitty;
+    noctalia.settings = theme.noctalia;
+    starship.settings = theme.starship;
+  };
 }

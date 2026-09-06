@@ -4,8 +4,10 @@
       enable = true;
       enableFishIntegration = true;
     };
-
-    fastfetch.enable = true;
+    noctalia = {
+      enable = true;
+      systemd.enable = true;
+    };
     cava = {
       enable = true;
       settings.color.theme = "noctalia";

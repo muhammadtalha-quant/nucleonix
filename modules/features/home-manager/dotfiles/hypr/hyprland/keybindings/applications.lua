@@ -44,7 +44,7 @@ local webapps = {
     desc = "Open Google Office Suite"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.D)] = {
-    cmd = helpers.url_as_webapp("https://discord.com"),
+    cmd = helpers.url_as_webapp("https://discord.com/channels/@me"),
     desc = "Open Discord"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.G)] = {
@@ -70,7 +70,7 @@ hl.bind(
   helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.A),
   hl.dsp.submap("ai_mode"),
   {
-    description = "Launch AI ([o]penai, [c]laude and [g]emini)",
+    description = "Launch AI (chatgp[t], [c]laude, [g]emini | [n]otebook and [q]wen)",
   }
 )
 

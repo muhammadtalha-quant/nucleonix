@@ -2,19 +2,18 @@
   description = "A modular multi host flake that manages one complete single user NixOS system at a time, using the nucleus architecture.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
     disko = {
-      url = "github:nix-community/disko/master";
+      url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:nix-community/stylix/release-26.05";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lazyvim.url = "github:pfassina/lazyvim-nix";
@@ -24,7 +23,6 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
       lazyvim,
       stylix,
@@ -43,7 +41,6 @@
 
       # !=== FLAKE CONFIG ===!
       system = "x86_64-linux";
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
       # !=== USER CONFIG ===!
       realName = "Muhammad Talha";
@@ -93,7 +90,6 @@
           inherit swapSize;
           inherit devices;
           inherit folders;
-          inherit pkgs-unstable;
           inherit inputs;
         };
         modules = [
@@ -115,7 +111,6 @@
                 inherit stateVersion;
                 inherit gpgKey;
                 inherit lazyvim;
-                inherit pkgs-unstable;
                 inherit emailAddress;
               };
             };

@@ -3,10 +3,11 @@ local helpers = require("hyprland.keybindings.helpers")
 
 hl.define_submap("ai_mode", function()
   local clankers = {
-    [KEYS.ALPHABET.O] = helpers.url_as_webapp("https://chatgpt.com"),
+    [KEYS.ALPHABET.T] = helpers.url_as_webapp("https://chatgpt.com"),
     [KEYS.ALPHABET.C] = helpers.url_as_webapp("https://claude.ai"),
     [KEYS.ALPHABET.G] = helpers.url_as_webapp("https://gemini.google.com"),
-    [KEYS.ALPHABET.N] = helpers.url_as_webapp("https://notebook.google.com")
+    [KEYS.ALPHABET.N] = helpers.url_as_webapp("https://notebook.google.com"),
+    [KEYS.ALPHABET.Q] = helpers.url_as_webapp("https://chat.qwen.ai")
   }
   for bind, clanker in pairs(clankers) do
     hl.bind(

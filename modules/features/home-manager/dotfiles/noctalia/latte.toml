@@ -73,6 +73,8 @@ sync_all_monitors = false
 
 [calendar]
 enabled = false
+event_date_format = "%A %e %B"
+event_time_format = "%H:%M"
 refresh_minutes = 15
 
 [control_center]
@@ -84,8 +86,6 @@ sidebar_section = "none"
 width = 700
 
     [control_center.calendar]
-    event_date_format = "%A %e %B"
-    event_time_format = "%H:%M"
     show_events_card = false
     show_week_numbers = false
 
@@ -454,7 +454,6 @@ auto_update = "official"
 enabled = [ "noctalia/screen_recorder" ]
 
     [[plugins.source]]
-    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
@@ -506,7 +505,7 @@ time_format = "{:%I:%M %p}"
     speed = 1.0
 
     [shell.greeter_sync]
-    auto_sync = false
+    auto_sync = true
 
     [shell.keyboard_layout]
 
@@ -698,7 +697,7 @@ custom_palette = ""
 mode = "light"
 pure_black_dark = false
 source = "community"
-wallpaper_scheme = "faithful"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "hyprland" ]
@@ -726,13 +725,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/flower-field-2.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/clouds.png"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/flower-field-2.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/clouds.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/latte/flower-field-2.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/clouds.png"
 
 [weather]
 effects = true

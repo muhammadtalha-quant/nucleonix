@@ -73,7 +73,7 @@ in
     preferAbbrs = true;
     shellAliases = aliases;
     shellInit = ''
-      fastfetch
+      microfetch
       devenv hook fish | source
     '';
     plugins = fishPlugins;
