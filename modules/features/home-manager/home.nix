@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   inputs,
   stateVersion,
   userName,
@@ -36,7 +35,6 @@
       file-roller
       loupe
       video-downloader
-      pkgs-unstable.noctalia
     ];
     inherit stateVersion;
   };
