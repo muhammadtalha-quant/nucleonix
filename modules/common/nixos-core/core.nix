@@ -3,17 +3,22 @@
   pkgs,
   locale,
   ...
-}@others:
+}:
 {
   imports = [
     (inputs.import-tree ./modules)
   ];
-  services.dbus.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  services = {
+    dbus.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
-  programs.fish.enable = true;
+  programs = {
+    gnupg = {
+      agent.enable = true;
+      agent.enableSSHSupport = true;
+    };
+    fish.enable = true;
+  };
   environment = {
     sessionVariables = {
       LANG = locale;
@@ -29,7 +34,8 @@
       git
       gh
       neovim
-      others.pkgs-unstable.devenv
+      devenv
+      microfetch
     ];
   };
 }
