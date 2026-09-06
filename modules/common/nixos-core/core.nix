@@ -8,10 +8,9 @@
   imports = [
     (inputs.import-tree ./modules)
   ];
-  services = {
-    dbus.enable = true;
-    gnome.gnome-keyring.enable = true;
-  };
+
+  services.dbus.enable = true;
+
   programs = {
     gnupg = {
       agent.enable = true;
