@@ -4,14 +4,12 @@
   stateVersion,
   userName,
   stylix,
-  lazyvim,
   ...
 }:
 
 {
 
   imports = [
-    lazyvim.homeManagerModules.default
     stylix.homeModules.stylix
     (inputs.import-tree ./modules)
   ];
@@ -22,7 +20,6 @@
     homeDirectory = "/home/${userName}";
     packages = with pkgs; [
       pipes
-      clock-rs
       wl-clipboard
       satty
       cmatrix

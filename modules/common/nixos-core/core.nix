@@ -33,7 +33,6 @@
       git
       gh
       neovim
-      devenv
       microfetch
     ];
   };

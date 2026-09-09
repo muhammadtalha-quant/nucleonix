@@ -128,8 +128,8 @@ let
 in
 {
   stylix = theme.spec;
+  xdg.configFile."nvim/lua/plugins/theme.lua".text = theme.lazyvim;
   programs = {
-    lazyvim.plugins.colorscheme = theme.lazyvim;
     kitty.themeFile = theme.kitty;
     noctalia.settings = theme.noctalia;
     starship.settings = theme.starship;

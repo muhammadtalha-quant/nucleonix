@@ -4,6 +4,11 @@
       enable = true;
       enableFishIntegration = true;
     };
+    lazygit.enable = true;
+    devenv = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     noctalia = {
       enable = true;
       systemd.enable = true;
@@ -19,6 +24,5 @@
         color_theme = "noctalia";
       };
     };
-    lazygit.enable = true;
   };
 }

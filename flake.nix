@@ -16,7 +16,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lazyvim.url = "github:pfassina/lazyvim-nix";
   };
 
   outputs =
@@ -24,7 +23,6 @@
       self,
       nixpkgs,
       home-manager,
-      lazyvim,
       stylix,
       disko,
       ...
@@ -110,7 +108,6 @@
                 inherit realName;
                 inherit stateVersion;
                 inherit gpgKey;
-                inherit lazyvim;
                 inherit emailAddress;
               };
             };

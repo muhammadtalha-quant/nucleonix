@@ -29,7 +29,7 @@ hl.config({
     gaps_out = 8,
     gaps_workspaces = 50,
 
-    border_size = 3,
+    border_size = 1,
 
     resize_on_border = true,
 
@@ -43,8 +43,8 @@ hl.config({
     }
   },
   decoration = {
-    rounding_power = 2.5,
-    rounding = 18,
+    rounding_power = 2,
+    rounding = 15,
     blur = {
       enabled = true,
       xray = true,
