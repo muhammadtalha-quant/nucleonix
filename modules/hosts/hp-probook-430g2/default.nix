@@ -1,8 +1,4 @@
 { pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
 
   hardware.graphics = {
     enable = true;
@@ -11,5 +7,5 @@
       intel-media-sdk
     ];
   };
-
+  hardware.facter.reportPath = ./hardware_report.json;
 }
