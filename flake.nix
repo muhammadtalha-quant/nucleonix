@@ -37,9 +37,6 @@
       hashedRootPassword = "$y$j9T$CXXX951qyBSRGHfHxZ8E01$ooy/jGSGAqWqdNQ0WA9pMbjibDGYoA2jsmDU8GJhbv2";
       stateVersion = "26.05";
 
-      # !=== FLAKE CONFIG ===!
-      system = "x86_64-linux";
-
       # !=== USER CONFIG ===!
       realName = "Muhammad Talha";
       emailAddress = "muhammadtalha.quant@gmail.com";
@@ -72,23 +69,14 @@
         inherit storageDevice;
         inherit swapSize;
       };
-      nixosConfigurations.${hostName} = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit userName;
-          inherit hashedRootPassword;
-          inherit hashedUserPassword;
-          inherit stateVersion;
-          inherit realName; # for user desc
-          inherit hostName;
-          inherit timeZone;
-          inherit configDirectory;
-          inherit storageDevice;
-          inherit locale;
-          inherit swapSize;
-          inherit devices;
-          inherit folders;
-          inherit inputs;
+      nixosConfigurations.${hostName} =
+        let
+          hostHardware = builtins.fromJSON (
+            builtins.readFile ./modules/hosts/${hostName}/hardware_report.json
+          );
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit (hostHardware) system;
         };
         modules = [
           ./modules/common/nixos-core/core.nix
