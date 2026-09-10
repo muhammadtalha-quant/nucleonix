@@ -1,9 +1,11 @@
 { userName, extraSpecialArgs, ... }: {
   home-manager = {
-    inherit extraSpecialArgs;
+    extraSpecialArgs = extraSpecialArgs // {
+      inherit userName;
+    };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${userName} = import ./home.nix { inherit userName; };
+    users.${userName} = import ./home.nix;
     backupFileExtension = "backup";
   };
 }
