@@ -1,5 +1,5 @@
-local KEYS = require("keys")
-local helpers = require("helpers")
+local KEYS = require("lib.keys")
+local helpers = require("lib.helpers")
 
 local non_repeating_ipc_calls = {
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.SPECIAL.SPACE)] = { cmd = "noctalia msg panel-toggle launcher", desc = "Toggle App Launcher" },
