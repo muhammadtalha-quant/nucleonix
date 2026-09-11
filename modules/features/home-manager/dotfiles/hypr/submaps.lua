@@ -1,5 +1,5 @@
-local KEYS = require("keys")
-local helpers = require("helpers")
+local KEYS = require("lib.keys")
+local helpers = require("lib.helpers")
 
 hl.define_submap("ai_mode", function()
   local clankers = {

@@ -1,5 +1,5 @@
-local KEYS = require("keys")
-local helpers = require("helpers")
+local KEYS = require("lib.keys")
+local helpers = require("lib.helpers")
 
 local apps = {
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.SPECIAL.ENTER)]         =

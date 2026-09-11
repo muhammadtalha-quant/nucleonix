@@ -1,5 +1,5 @@
-local KEYS = require("keys")
-local helpers = require("helpers")
+local KEYS = require("lib.keys")
+local helpers = require("lib.helpers")
 
 
 for i = 1, 9 do

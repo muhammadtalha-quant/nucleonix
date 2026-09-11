@@ -1,4 +1,4 @@
-local KEYS = require("keys")
+local KEYS = require("lib.keys")
 local M = {}
 
 function M.register(...)
