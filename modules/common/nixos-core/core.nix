@@ -10,7 +10,10 @@
   ];
 
   services.dbus.enable = true;
-
+  hardware = {
+    enableAllFirmware = true;
+    enableAllHardware = true;
+  };
   programs = {
     gnupg = {
       agent.enable = true;

@@ -1,5 +1,4 @@
 {
-  userName,
   gpgKey,
   emailAddress,
   realName,

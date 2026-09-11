@@ -700,7 +700,7 @@ source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "hyprland" ]
+    builtin_ids = [ "btop", "cava" ]
     community_ids = []
     enable_builtin_templates = true
     enable_community_templates = false
@@ -725,13 +725,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/clouds.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/train-sideview.png"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/clouds.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/train-sideview.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/clouds.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/train-sideview.png"
 
 [weather]
 effects = true

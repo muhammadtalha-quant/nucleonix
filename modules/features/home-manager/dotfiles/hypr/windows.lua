@@ -1,5 +1,5 @@
-local KEYS = require("hyprland.keybindings.keys")
-local helpers = require("hyprland.keybindings.helpers")
+local KEYS = require("lib.keys")
+local helpers = require("lib.helpers")
 
 hl.bind(
   helpers.register(
