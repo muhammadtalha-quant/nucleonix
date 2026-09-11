@@ -65,6 +65,10 @@ let
       }
     '';
     noctalia = ../dotfiles/noctalia/macchiato.toml;
+    hyprland = {
+      content = ../dotfiles/hypr/macchiato.lua;
+      autoLoad = true;
+    };
     starship = builtins.fromTOML (builtins.readFile ../dotfiles/starship/macchiato.toml);
     kitty = "Catppuccin-Macchiato";
   };
@@ -121,6 +125,10 @@ let
       }
     '';
     noctalia = ../dotfiles/noctalia/latte.toml;
+    hyprland = {
+      content = ../dotfiles/hypr/latte.lua;
+      autoLoad = true;
+    };
     starship = builtins.fromTOML (builtins.readFile ../dotfiles/starship/latte.toml);
     kitty = "Catppuccin-Latte";
   };
@@ -129,6 +137,9 @@ in
 {
   stylix = theme.spec;
   xdg.configFile."nvim/lua/plugins/theme.lua".text = theme.lazyvim;
+  wayland.windowManager.hyprland.extraLuaFiles = {
+    "theme" = theme.hyprland;
+  };
   programs = {
     kitty.themeFile = theme.kitty;
     noctalia.settings = theme.noctalia;
