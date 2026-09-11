@@ -1,5 +1,5 @@
-local KEYS = require("hyprland.keybindings.keys")
-local helpers = require("hyprland.keybindings.helpers")
+local KEYS = require("keys")
+local helpers = require("helpers")
 
 local non_repeating_ipc_calls = {
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.SPECIAL.SPACE)] = { cmd = "noctalia msg panel-toggle launcher", desc = "Toggle App Launcher" },

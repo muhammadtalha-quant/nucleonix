@@ -1,4 +1,4 @@
-local KEYS = require("hyprland.keybindings.keys")
+local KEYS = require("keys")
 local M = {}
 
 function M.register(...)

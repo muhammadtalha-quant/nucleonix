@@ -1,5 +1,5 @@
-local KEYS = require("hyprland.keybindings.keys")
-local helpers = require("hyprland.keybindings.helpers")
+local KEYS = require("keys")
+local helpers = require("helpers")
 
 local apps = {
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.SPECIAL.ENTER)]         =

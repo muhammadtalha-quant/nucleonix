@@ -1,5 +1,0 @@
-require("hyprland.keybindings.windows")
-require("hyprland.keybindings.submaps")
-require("hyprland.keybindings.workspaces")
-require("hyprland.keybindings.applications")
-require("hyprland.keybindings.ipc_noctalia")
