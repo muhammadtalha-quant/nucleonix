@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  locale,
   ...
 }:
 {
@@ -10,6 +9,8 @@
   ];
 
   services.dbus.enable = true;
+  services.envfs.enable = true;
+
   hardware = {
     enableAllFirmware = true;
     enableAllHardware = true;
@@ -23,7 +24,7 @@
   };
   environment = {
     sessionVariables = {
-      LANG = locale;
+      LANG = "en_US.UTF-8";
     };
     systemPackages = with pkgs; [
       nix-output-monitor

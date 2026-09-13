@@ -34,25 +34,25 @@ local apps = {
   }
 }
 
-local webapps = {
+local websites = {
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.W)] = {
-    cmd = helpers.url_as_webapp("https://web.whatsapp.com"),
+    cmd = helpers.url_in_chrome("https://web.whatsapp.com"),
     desc = "Open Whatsapp"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.O)] = {
-    cmd = helpers.url_as_webapp("https://docs.google.com/document/u/0/"),
+    cmd = helpers.url_in_chrome("https://docs.google.com/document/u/0/"),
     desc = "Open Google Office Suite"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.D)] = {
-    cmd = helpers.url_as_webapp("https://discord.com/channels/@me"),
+    cmd = helpers.url_in_chrome("https://discord.com/channels/@me"),
     desc = "Open Discord"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.G)] = {
-    cmd = helpers.url_as_webapp("https://github.com/muhammadtalha-quant"),
+    cmd = helpers.url_in_chrome("https://github.com/muhammadtalha-quant"),
     desc = "Open GitHub (My Account)"
   },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.ALPHABET.M)] = {
-    cmd = helpers.url_as_webapp("https://mail.google.com/mail/u/0/#inbox"),
+    cmd = helpers.url_in_chrome("https://mail.google.com/mail/u/0/#inbox"),
     desc = "Open GMail Inbox"
   },
 }
@@ -85,12 +85,12 @@ for keybind, app in pairs(apps) do
 end
 
 
-for keybind, webapp in pairs(webapps) do
+for keybind, site in pairs(websites) do
   hl.bind(
     keybind,
-    hl.dsp.exec_cmd(webapp.cmd),
+    hl.dsp.exec_cmd(site.cmd),
     {
-      description = webapp.desc,
+      description = site.desc,
     }
   )
 end

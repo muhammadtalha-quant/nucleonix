@@ -16,6 +16,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lazyvim = {
+      url = "github:pfassina/lazyvim-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +28,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      lazyvim,
       disko,
       ...
     }@inputs:
@@ -32,7 +37,6 @@
       userName = "muhammadtalha";
       hostName = "hp-probook-430g2";
       timeZone = "Asia/Karachi";
-      locale = "en_US.UTF-8";
       hashedUserPassword = "$y$j9T$T/fyOwJSnwDN5vhbYvxOU0$xWmn12BoAIyDVChelEt7LyhGHQTMlJjd/5OEuy6Ud65";
       hashedRootPassword = "$y$j9T$CXXX951qyBSRGHfHxZ8E01$ooy/jGSGAqWqdNQ0WA9pMbjibDGYoA2jsmDU8GJhbv2";
       stateVersion = "26.05";
@@ -51,6 +55,7 @@
       extraSpecialArgs = {
         inherit inputs;
         inherit stylix;
+        inherit lazyvim;
         inherit realName;
         inherit stateVersion;
         emailAddress = "muhammadtalha.quant@gmail.com";
@@ -95,7 +100,6 @@
             inherit timeZone;
             inherit configDirectory;
             inherit storageDevice;
-            inherit locale;
             inherit swapSize;
             inherit extraSpecialArgs;
             inherit devices;

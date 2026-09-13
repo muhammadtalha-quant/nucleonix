@@ -1,17 +1,19 @@
-{pkgs, lib, ...}: {
- programs.neovim = {
- 	enable = true;
-	extraPackages = with pkgs; [
-		ripgrep
-		fd
-		fzf
-		curl
-		tree-sitter
-		gcc-unwrapped
-	];
- };
-  xdg.configFile."nvim" = {
-    source = lib.mkForce ../dotfiles/lazyvim;
-    recursive = true;
+{
+  programs.lazyvim = {
+    enable = true;
+    ignoreBuildNotifications = true;
+    extras.lang = {
+      nix.enable = true;
+      markdown.enable = true;
+    };
+    config = {
+      options = ''
+        vim.g.trouble_lualine = false
+        vim.o.exrc = true
+        vim.o.secure = true
+      '';
+      autocmds = "";
+      keymaps = "";
+    };
   };
 }

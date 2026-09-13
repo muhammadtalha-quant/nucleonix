@@ -3,6 +3,7 @@
   inputs,
   stateVersion,
   userName,
+  lazyvim,
   stylix,
   ...
 }:
@@ -11,6 +12,7 @@
 
   imports = [
     stylix.homeModules.stylix
+    lazyvim.homeManagerModules.default
     (inputs.import-tree ./modules)
   ];
   programs.home-manager.enable = true;
