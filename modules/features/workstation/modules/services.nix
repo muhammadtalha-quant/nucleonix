@@ -2,21 +2,8 @@
   userName,
   folders,
   devices,
-  pkgs,
   ...
 }:
-let
-  cursorTheme = {
-    light = {
-      name = "catppuccin-latte-mauve-cursors";
-      package = pkgs.catppuccin-cursors.latteMauve;
-    };
-    dark = {
-      name = "catppuccin-macchiato-mauve-cursors";
-      package = pkgs.catppuccin-cursors.macchiatoMauve;
-    };
-  };
-in
 {
   services = {
     power-profiles-daemon.enable = true;
@@ -32,14 +19,7 @@ in
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    displayManager.noctalia-greeter = {
-      enable = true;
-      settings = {
-        cursor.size = 26;
-        keyboard.layout = "us";
-      };
-      cursorTheme = cursorTheme.dark;
-    };
+    displayManager.ly.enable = true;
     libinput.enable = true;
     pcscd.enable = true;
     syncthing = {
