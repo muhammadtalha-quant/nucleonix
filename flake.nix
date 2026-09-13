@@ -16,6 +16,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lazyvim = {
+      url = "github:pfassina/lazyvim-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +28,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      lazyvim,
       disko,
       ...
     }@inputs:
@@ -51,6 +56,7 @@
       extraSpecialArgs = {
         inherit inputs;
         inherit stylix;
+        inherit lazyvim;
         inherit realName;
         inherit stateVersion;
         emailAddress = "muhammadtalha.quant@gmail.com";

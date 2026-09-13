@@ -136,12 +136,12 @@ let
 in
 {
   stylix = theme.spec;
-  xdg.configFile."nvim/lua/plugins/theme.lua".text = theme.lazyvim;
   wayland.windowManager.hyprland.extraLuaFiles = {
     "theme" = theme.hyprland;
   };
   programs = {
     kitty.themeFile = theme.kitty;
+    lazyvim.plugins.colorscheme = theme.lazyvim;
     noctalia.settings = theme.noctalia;
     starship.settings = theme.starship;
   };

@@ -182,7 +182,7 @@ rebooting = []
 session_locked = []
 session_unlocked = []
 shutting_down = []
-started = []
+started = "hyprctl reload"
 theme_mode_changed = []
 wallpaper_changed = []
 wifi_disabled = []
@@ -503,6 +503,9 @@ time_format = "{:%I:%M %p}"
     enabled = true
     speed = 1.0
 
+    [shell.greeter_sync]
+    auto_sync = false
+
     [shell.launcher]
     app_grid = false
     auto_paste = "off"
@@ -719,13 +722,13 @@ transition_on_startup = false
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/train-sideview.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/train-sideview.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/train-sideview.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
 
 [weather]
 effects = true

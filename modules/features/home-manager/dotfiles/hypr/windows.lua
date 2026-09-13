@@ -1,6 +1,16 @@
 local KEYS = require("lib.keys")
 local helpers = require("lib.helpers")
 
+hl.bind(helpers.register(
+    KEYS.MODIFIER.ALT,
+    KEYS.ALPHABET.R
+  ),
+  hl.dsp.submap("resize"),
+  {
+    description = "Resize Windows/Tiles",
+  }
+)
+
 hl.bind(
   helpers.register(
     KEYS.MODIFIER.SUPER,
@@ -125,30 +135,6 @@ hl.bind(
   {
 
     description = "Toggle Fullscreen"
-  }
-)
-
-hl.bind(
-  helpers.register(
-    KEYS.MODIFIER.SUPER,
-    KEYS.SYMBOL.BRACKETRIGHT
-  ),
-  hl.dsp.layout("splitratio +0.1"),
-  {
-    repeating = true,
-    description = "Increase Split Ratio By 10%",
-  }
-)
-
-hl.bind(
-  helpers.register(
-    KEYS.MODIFIER.SUPER,
-    KEYS.SYMBOL.BRACKETLEFT
-  ),
-  hl.dsp.layout("splitratio -0.1"),
-  {
-    repeating = true,
-    description = "Decrease Split Ratio By 10%",
   }
 )
 

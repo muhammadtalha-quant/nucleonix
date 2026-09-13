@@ -1,7 +1,19 @@
 { pkgs, configDirectory, ... }:
 {
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      withUWSM = false;
+    };
+    noctalia = {
+      enable = true;
+      recommendedServices.enable = true;
+      systemd = {
+        enable = true;
+        target = "hyprland-session.target";
+      };
+    };
     localsend.enable = true;
     seahorse.enable = true;
     nautilus-open-any-terminal = {
