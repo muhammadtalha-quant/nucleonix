@@ -467,7 +467,6 @@ enabled = [ "noctalia/screen_recorder" ]
 [shell]
 app_icon_color = "secondary"
 app_icon_colorize = false
-avatar_path = "/home/muhammadtalha/Pictures/Avatar/file_000000003be4720b9b24c828b29dce18.png"
 button_borders = true
 card_borders = true
 clipboard_auto_paste = "off"
@@ -503,11 +502,6 @@ time_format = "{:%I:%M %p}"
     [shell.animation]
     enabled = true
     speed = 1.0
-
-    [shell.greeter_sync]
-    auto_sync = true
-
-    [shell.keyboard_layout]
 
     [shell.launcher]
     app_grid = false
