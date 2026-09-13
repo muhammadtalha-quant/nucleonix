@@ -19,8 +19,8 @@ let
 in
 {
   services = {
-    power-profiles-daemon.enable = true; # for laptops
-    upower.enable = true; # for laptops
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
     fprintd.enable = true;
     udisks2.enable = true;
     gnome.gnome-keyring.enable = true;
