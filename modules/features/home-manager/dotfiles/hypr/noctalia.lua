@@ -11,6 +11,7 @@ local non_repeating_ipc_calls = {
   [KEYS.SPECIAL.PRINT] = { cmd = "noctalia msg screenshot-region", desc = "Screenshot Region" },
   [helpers.register(KEYS.MODIFIER.SHIFT, KEYS.SPECIAL.PRINT)] = { cmd = "noctalia msg screenshot-fullscreen", desc = "Screenshot Fullscreen" },
   [helpers.register(KEYS.MODIFIER.ALT, KEYS.SPECIAL.PRINT)] = { cmd = "noctalia msg plugin noctalia/screen_recorder:service all toggle", desc = "Toggle Screen Record" },
+  [helpers.register(KEYS.MODIFIER.ALT, KEYS.SPECIAL.TAB)] = { cmd = "noctalia msg window-switcher", desc = "Toggle Window Switcher" },
   [helpers.register(KEYS.MODIFIER.CTRL, KEYS.MODIFIER.ALT, KEYS.NAVIGATION.DELETE)] = { cmd = "noctalia msg panel-toggle session", desc = "Toggle Session Menu" },
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.ALPHABET.L)] = { cmd = "noctalia msg session lock", desc = "Lock Session" },
   [helpers.register(KEYS.MODIFIER.SUPER, KEYS.ALPHABET.W)] = { cmd = "noctalia msg wallpaper-random", desc = "Activate Random Wallpaper" },

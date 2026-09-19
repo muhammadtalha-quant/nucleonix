@@ -23,7 +23,6 @@
     packages = with pkgs; [
       pipes
       wl-clipboard
-      satty
       cmatrix
       google-chrome
       obsidian
