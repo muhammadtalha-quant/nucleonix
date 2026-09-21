@@ -6,14 +6,6 @@
       nix.enable = true;
       markdown.enable = true;
     };
-    config = {
-      options = ''
-        vim.g.trouble_lualine = false
-        vim.o.exrc = true
-        vim.o.secure = true
-      '';
-      autocmds = "";
-      keymaps = "";
-    };
+    configFiles = ../dotfiles/lazyvim;
   };
 }
