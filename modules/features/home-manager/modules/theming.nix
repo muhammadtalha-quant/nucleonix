@@ -60,6 +60,7 @@ let
           "LazyVim/LazyVim",
           opts = {
             colorscheme = "catppuccin-macchiato",
+            transparent_background = true,
           },
         },
       }
@@ -120,6 +121,7 @@ let
           "LazyVim/LazyVim",
           opts = {
             colorscheme = "catppuccin-latte",
+            transparent_background = true,
           },
         },
       }
