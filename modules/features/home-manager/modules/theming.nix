@@ -61,6 +61,10 @@ let
           name = "catppuccin",
           opts = {
             transparent_background = false,
+            float = {
+              transparent = true,
+              solid = false,
+            },
             lsp_styles = {
               underlines = {
                 errors = { "undercurl" },
@@ -174,6 +178,10 @@ let
           name = "catppuccin",
           opts = {
             transparent_background = false,
+            float = {
+              transparent = true,
+              solid = false,
+            },
             lsp_styles = {
               underlines = {
                 errors = { "undercurl" },
