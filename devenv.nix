@@ -8,11 +8,8 @@
 
 {
   packages = with pkgs; [
-    nixfmt
     statix
-    marksman
-    markdownlint-cli2
-    markdown-toc
+    nixfmt
   ];
 
   languages = {
