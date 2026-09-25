@@ -1,5 +1,5 @@
 {
-  description = "A modular multi host flake that manages one complete single user NixOS system at a time, using the nucleus architecture.";
+  description = "A modular multi host flake that manages a complete single user NixOS system at a time, using the nucleus architecture.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -27,94 +27,70 @@
       self,
       nixpkgs,
       home-manager,
-      stylix,
-      lazyvim,
       disko,
       ...
     }@inputs:
     let
-      # !=== SYSTEM CONFIG ===!
-      userName = "muhammadtalha";
-      hostName = "hp-probook-430g2";
-      timeZone = "Asia/Karachi";
-      hashedUserPassword = "$y$j9T$T/fyOwJSnwDN5vhbYvxOU0$xWmn12BoAIyDVChelEt7LyhGHQTMlJjd/5OEuy6Ud65";
-      hashedRootPassword = "$y$j9T$CXXX951qyBSRGHfHxZ8E01$ooy/jGSGAqWqdNQ0WA9pMbjibDGYoA2jsmDU8GJhbv2";
-      stateVersion = "26.05";
+      hosts = {
+        hpProbook430G2 = {
+          hostName = "hp-probook-430g2";
+          stateVersion = "26.05";
+          timeZone = "Asia/Karachi";
+          diskoConfig = {
+            device = "/dev/sda";
+            swapSize = "4G";
+          };
+        };
+      };
 
-      # !=== USER CONFIG ===!
-      realName = "Muhammad Talha";
-
-      # !=== DISKO CONFIG ===!
-      storageDevice = "/dev/sda";
-      swapSize = "4G"; # size of swap partition
-
+      users = {
+        root.hashedPassword = "$y$j9T$CXXX951qyBSRGHfHxZ8E01$ooy/jGSGAqWqdNQ0WA9pMbjibDGYoA2jsmDU8GJhbv2";
+        primary = {
+          userName = "muhammadtalha";
+          realName = "Muhammad Talha";
+          hashedPassword = "$y$j9T$T/fyOwJSnwDN5vhbYvxOU0$xWmn12BoAIyDVChelEt7LyhGHQTMlJjd/5OEuy6Ud65";
+          emailAddress = "muhammadtalha.quant@gmail.com";
+          gpgKey = "33DF23031DE1A83C";
+        };
+      };
       # !=== ENVIRONMENT CONFIG ===!
-      configDirectory = "/home/${userName}/nucleonix/";
-
-      # !=== HOME MANAGER ===!
-      extraSpecialArgs = {
-        inherit inputs;
-        inherit stylix;
-        inherit lazyvim;
-        inherit realName;
-        inherit stateVersion;
-        emailAddress = "muhammadtalha.quant@gmail.com";
-        gpgKey = "33DF23031DE1A83C";
-      };
-
-      # !=== SYNCTHING CONFIG ===!
-      devices = {
-        myphone = {
-          id = "7XVOG6S-6BTWJNS-MHZ4QLW-YG4NWLD-JHD7ODT-ANKSLBW-CQMTKVZ-PAYT2QV";
-          addresses = [ "dynamic" ];
-        };
-      };
-      folders = {
-        "/home/${userName}/sync" = {
-          enable = true;
-          id = "sync";
-          devices = [ "myphone" ];
-        };
-      };
+      configDirectory = "/home/${users.primary.userName}/nucleonix/";
     in
     {
-      diskoConfigurations.${hostName} = import ./modules/common/disko/laptop.nix {
-        inherit storageDevice;
-        inherit swapSize;
+      diskoConfigurations = {
+        ${hosts.hpProbook430G2.hostName} =
+          import ./modules/common/disko/ext4-unencrypted.nix hosts.hpProbook430G2;
       };
-      nixosConfigurations.${hostName} =
-        let
-          hostHardware = builtins.fromJSON (
-            builtins.readFile ./modules/hosts/${hostName}/hardware_report.json
-          );
-        in
-        nixpkgs.lib.nixosSystem {
-          inherit (hostHardware) system;
-          specialArgs = {
-            inherit userName;
-            inherit hashedRootPassword;
-            inherit hashedUserPassword;
-            inherit stateVersion;
-            inherit realName;
-            inherit hostName;
-            inherit timeZone;
-            inherit configDirectory;
-            inherit storageDevice;
-            inherit swapSize;
-            inherit extraSpecialArgs;
-            inherit devices;
-            inherit folders;
-            inherit inputs;
+      nixosConfigurations = {
+        ${hosts.hpProbook430G2.hostName} =
+          let
+            currentHost = hosts.hpProbook430G2;
+          in
+          nixpkgs.lib.nixosSystem {
+            inherit
+              (
+                (builtins.fromJSON (builtins.readFile ./modules/hosts/${currentHost.hostName}/hardware_report.json))
+              )
+              system
+              ;
+            specialArgs = {
+              inherit inputs;
+              inherit configDirectory;
+              inherit users;
+              inherit currentHost;
+              inherit (currentHost) diskoConfig;
+            };
+            modules = [
+              ./modules/common/nixos-core/core.nix
+              ./modules/features/workstation/workstation.nix
+              ./modules/features/virtualisation/virtualisation.nix
+              ./modules/hosts/${currentHost.hostName}/default.nix
+              home-manager.nixosModules.home-manager
+              ./modules/features/home-manager/decl.nix
+              disko.nixosModules.disko
+              ./modules/common/disko/ext4-unencrypted.nix
+            ];
           };
-          modules = [
-            ./modules/common/nixos-core/core.nix
-            ./modules/features/workstation/workstation.nix
-            ./modules/hosts/${hostName}/default.nix
-            home-manager.nixosModules.home-manager
-            ./modules/features/home-manager/decl.nix
-            disko.nixosModules.disko
-            ./modules/common/disko/laptop.nix
-          ];
-        };
+      };
     };
 }

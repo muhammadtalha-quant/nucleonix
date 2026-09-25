@@ -9,7 +9,7 @@
       settings = {
         remember_window_size = true;
         cursor_trail = 1;
-        background_opacity = 0.85;
+        background_opacity = 0.80;
         confirm_os_window_close = 0;
         enable_audio_bell = false;
         scrollback = "never";

@@ -1,8 +1,6 @@
 {
   inputs,
-  timeZone,
-  userName,
-  stateVersion,
+  currentHost,
   ...
 }:
 {
@@ -10,10 +8,15 @@
     (inputs.import-tree ./modules)
   ];
 
-  nix.settings.trusted-users = [
-    "${userName}"
-  ];
-  time = { inherit timeZone; };
+  time = {
+    inherit (currentHost)
+      timeZone
+      ;
+  };
   nixpkgs.config.allowUnfree = true;
-  system = { inherit stateVersion; };
+  system = {
+    inherit (currentHost)
+      stateVersion
+      ;
+  };
 }

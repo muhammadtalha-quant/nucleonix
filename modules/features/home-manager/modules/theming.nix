@@ -60,6 +60,7 @@ let
           "LazyVim/LazyVim",
           opts = {
             colorscheme = "catppuccin-macchiato",
+            transparent_background = true,
           },
         },
       }
@@ -116,13 +117,13 @@ let
     };
     lazyvim = ''
       return {
-        {
-          "LazyVim/LazyVim",
-          opts = {
-            colorscheme = "catppuccin-latte",
-          },
-        },
-      }
+         {
+           "LazyVim/LazyVim",
+           opts = {
+             colorscheme = "catppuccin-latte",
+           },
+         },
+       }
     '';
     noctalia = ../dotfiles/noctalia/latte.toml;
     hyprland = {

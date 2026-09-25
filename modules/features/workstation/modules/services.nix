@@ -1,7 +1,5 @@
 {
-  userName,
-  folders,
-  devices,
+  users,
   ...
 }:
 {
@@ -24,14 +22,25 @@
     pcscd.enable = true;
     syncthing = {
       enable = true;
-      dataDir = "/home/${userName}/";
-      user = userName;
+      dataDir = "/home/${users.primary.userName}/";
+      user = users.primary.userName;
       openDefaultPorts = true;
       overrideFolders = true;
       group = "users";
       settings = {
-        inherit folders;
-        inherit devices;
+        devices = {
+          myphone = {
+            id = "7XVOG6S-6BTWJNS-MHZ4QLW-YG4NWLD-JHD7ODT-ANKSLBW-CQMTKVZ-PAYT2QV";
+            addresses = [ "dynamic" ];
+          };
+        };
+        folders = {
+          "/home/${users.primary.userName}/sync" = {
+            enable = true;
+            id = "sync";
+            devices = [ "myphone" ];
+          };
+        };
       };
     };
   };

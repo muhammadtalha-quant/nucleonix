@@ -1,9 +1,9 @@
-{ storageDevice, swapSize, ... }:
+{ diskoConfig, ... }:
 {
   disko.devices = {
     disk = {
       my-disk = {
-        device = storageDevice;
+        inherit (diskoConfig) device;
         type = "disk";
         content = {
           type = "gpt";
@@ -20,7 +20,7 @@
             };
 
             swap = {
-              size = swapSize;
+              size = diskoConfig.swapSize;
               content = {
                 type = "swap";
                 discardPolicy = "both";

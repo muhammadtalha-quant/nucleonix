@@ -1,26 +1,20 @@
 {
   pkgs,
-  lib,
-  config,
-  inputs,
+  #lib,
+  #config,
+  #inputs,
   ...
 }:
 
 {
   packages = with pkgs; [
-    nixfmt
     statix
-    marksman
-    markdownlint-cli2
-    markdown-toc
+    nixfmt
   ];
 
-  languages = {
-    nix = {
-      enable = true;
-      lsp.package = pkgs.nil;
-    };
-    lua.enable = true;
+  languages.nix = {
+    enable = true;
+    lsp.package = pkgs.nil;
   };
   scripts = {
     compile.exec = "nh os boot";

@@ -1,11 +1,24 @@
-{ userName, extraSpecialArgs, ... }: {
+{
+  inputs,
+  currentHost,
+  users,
+  ...
+}:
+{
   home-manager = {
-    extraSpecialArgs = extraSpecialArgs // {
-      inherit userName;
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit (currentHost) stateVersion;
+      inherit (users.primary)
+        userName
+        realName
+        emailAddress
+        gpgKey
+        ;
     };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${userName} = import ./home.nix;
+    users.${users.primary.userName} = import ./home.nix;
     backupFileExtension = "backup";
   };
 }
