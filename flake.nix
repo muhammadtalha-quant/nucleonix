@@ -27,39 +27,42 @@
       self,
       nixpkgs,
       home-manager,
-      stylix,
-      lazyvim,
       disko,
       ...
     }@inputs:
     let
-      # !=== SYSTEM CONFIG ===!
-      userName = "muhammadtalha";
-      hostName = "hp-probook-430g2";
-      timeZone = "Asia/Karachi";
-      hashedUserPassword = "$y$j9T$T/fyOwJSnwDN5vhbYvxOU0$xWmn12BoAIyDVChelEt7LyhGHQTMlJjd/5OEuy6Ud65";
       hashedRootPassword = "$y$j9T$CXXX951qyBSRGHfHxZ8E01$ooy/jGSGAqWqdNQ0WA9pMbjibDGYoA2jsmDU8GJhbv2";
-      stateVersion = "26.05";
 
-      # !=== USER CONFIG ===!
-      realName = "Muhammad Talha";
+      hosts = {
+        hpProbook430G2 = {
+          hostName = "hp-probook-430g2";
+          stateVersion = "26.05";
+          timeZone = "Asia/Karachi";
+          disko = {
+            storageDevice = "/dev/sda";
+            swapSize = "4G";
+          };
+        };
+      };
 
-      # !=== DISKO CONFIG ===!
-      storageDevice = "/dev/sda";
-      swapSize = "4G"; # size of swap partition
-
+      users = {
+        primary = {
+          userName = "muhammadtalha";
+          realName = "Muhammad Talha";
+          hashedPassword = "$y$j9T$T/fyOwJSnwDN5vhbYvxOU0$xWmn12BoAIyDVChelEt7LyhGHQTMlJjd/5OEuy6Ud65";
+          emailAddress = "muhammadtalha.quant@gmail.com";
+          gpgKey = "33DF23031DE1A83C";
+        };
+      };
       # !=== ENVIRONMENT CONFIG ===!
-      configDirectory = "/home/${userName}/nucleonix/";
+      configDirectory = "/home/${users.primary.userName}/nucleonix/";
 
       # !=== HOME MANAGER ===!
-      extraSpecialArgs = {
-        inherit inputs;
-        inherit stylix;
-        inherit lazyvim;
-        inherit realName;
-        inherit stateVersion;
-        emailAddress = "muhammadtalha.quant@gmail.com";
-        gpgKey = "33DF23031DE1A83C";
+      hmArgs = {
+        inherit (users.primary) emailAddress;
+        inherit (users.primary) userName;
+        inherit (users.primary) realName;
+        inherit (users.primary) gpgKey;
       };
 
       # !=== SYNCTHING CONFIG ===!
@@ -70,7 +73,7 @@
         };
       };
       folders = {
-        "/home/${userName}/sync" = {
+        "/home/${users.primary.userName}/sync" = {
           enable = true;
           id = "sync";
           devices = [ "myphone" ];
@@ -78,43 +81,41 @@
       };
     in
     {
-      diskoConfigurations.${hostName} = import ./modules/common/disko/laptop.nix {
-        inherit storageDevice;
-        inherit swapSize;
-      };
-      nixosConfigurations.${hostName} =
-        let
-          hostHardware = builtins.fromJSON (
-            builtins.readFile ./modules/hosts/${hostName}/hardware_report.json
-          );
-        in
-        nixpkgs.lib.nixosSystem {
-          inherit (hostHardware) system;
-          specialArgs = {
-            inherit userName;
-            inherit hashedRootPassword;
-            inherit hashedUserPassword;
-            inherit stateVersion;
-            inherit realName;
-            inherit hostName;
-            inherit timeZone;
-            inherit configDirectory;
-            inherit storageDevice;
-            inherit swapSize;
-            inherit extraSpecialArgs;
-            inherit devices;
-            inherit folders;
-            inherit inputs;
-          };
-          modules = [
-            ./modules/common/nixos-core/core.nix
-            ./modules/features/workstation/workstation.nix
-            ./modules/hosts/${hostName}/default.nix
-            home-manager.nixosModules.home-manager
-            ./modules/features/home-manager/decl.nix
-            disko.nixosModules.disko
-            ./modules/common/disko/laptop.nix
-          ];
+      diskoConfigurations.${hosts.hpProbook430G2.hostName} =
+        import ./modules/common/disko/bare-ext4.nix hosts.hpProbook430G2.disko;
+      nixosConfigurations.${hosts.hpProbook430G2.hostName} = nixpkgs.lib.nixosSystem {
+        inherit
+          (
+            (builtins.fromJSON (
+              builtins.readFile ./modules/hosts/${hosts.hpProbook430G2.hostName}/hardware_report.json
+            ))
+          )
+          system
+          ;
+        specialArgs = {
+          inherit hashedRootPassword;
+          inherit hmArgs;
+          inherit inputs;
+          inherit configDirectory;
+          inherit users;
+          inherit (hosts.hpProbook430G2.disko) swapSize;
+          inherit (hosts.hpProbook430G2.disko) storageDevice;
+          inherit (hosts.hpProbook430G2) hostName;
+          inherit (hosts.hpProbook430G2) timeZone;
+          inherit (hosts.hpProbook430G2) stateVersion;
+          inherit devices;
+          inherit folders;
         };
+        modules = [
+          ./modules/common/nixos-core/core.nix
+          ./modules/features/workstation/workstation.nix
+          ./modules/features/virtualisation/virtualisation.nix
+          ./modules/hosts/${hosts.hpProbook430G2.hostName}/default.nix
+          home-manager.nixosModules.home-manager
+          ./modules/features/home-manager/decl.nix
+          disko.nixosModules.disko
+          ./modules/common/disko/laptop.nix
+        ];
+      };
     };
 }
