@@ -1,5 +1,5 @@
 {
-  userName,
+  users,
   folders,
   devices,
   ...
@@ -24,8 +24,8 @@
     pcscd.enable = true;
     syncthing = {
       enable = true;
-      dataDir = "/home/${userName}/";
-      user = userName;
+      dataDir = "/home/${users.primary.userName}/";
+      user = users.primary.userName;
       openDefaultPorts = true;
       overrideFolders = true;
       group = "users";
