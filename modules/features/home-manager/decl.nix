@@ -1,11 +1,20 @@
-{ userName, extraSpecialArgs, ... }: {
+{
+  inputs,
+  stateVersion,
+  hmArgs,
+  ...
+}:
+{
   home-manager = {
-    extraSpecialArgs = extraSpecialArgs // {
-      inherit userName;
+    extraSpecialArgs = hmArgs // {
+      inherit inputs;
+      inherit (inputs) stylix;
+      inherit (inputs) lazyvim;
+      inherit stateVersion;
     };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${userName} = import ./home.nix;
+    users.${hmArgs.userName} = import ./home.nix;
     backupFileExtension = "backup";
   };
 }
