@@ -1,6 +1,7 @@
 { lib, den, ... }:
 {
   den = {
+    default.includes = [ den.batteries.hostname ];
     default.nixos.system.stateVersion = "26.05";
     default.homeManager.home.stateVersion = "26.05";
 
