@@ -1,4 +1,4 @@
-{ dots, ... }: {
+{ den, dots, ... }: {
   den.aspects.hyprland-desktop-environment = { user, ... }: {
     includes = [
       (dots.vcs {
@@ -15,6 +15,7 @@
       dots.xdg-integration
       dots.independent-packages
       dots.wheels
+      (den.batteries.unfree [ "rar" ])
     ];
     nixos = { pkgs, ... }: {
       fonts.packages = with pkgs; [
@@ -30,7 +31,6 @@
         };
         systemPackages = with pkgs; [
           gpu-screen-recorder
-          rar
           unar
           _7zz
         ];
