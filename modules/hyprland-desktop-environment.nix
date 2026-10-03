@@ -78,7 +78,7 @@
         pcscd.enable = true;
         syncthing = {
           enable = true;
-          dataDir = user.home;
+          dataDir = "/home/${user.userName}";
           user = user.userName;
           openDefaultPorts = true;
           overrideFolders = true;
