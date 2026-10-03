@@ -1,6 +1,6 @@
 {
   dots.noctalia = { theme }: {
-    nixos = {
+    nixos.programs = {
       noctalia = {
         enable = true;
         recommendedServices.enable = true;
