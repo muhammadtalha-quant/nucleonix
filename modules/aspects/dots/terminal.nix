@@ -1,6 +1,6 @@
 {
   dots.terminal = { theme }: {
-    nixos = {
+    nixos.programs = {
       nautilus-open-any-terminal = {
         enable = true;
         terminal = "kitty";
