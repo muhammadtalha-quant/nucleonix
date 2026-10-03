@@ -26,7 +26,7 @@
           VISUAL = "nvim";
           QT_QPA_PLATFORM = "wayland;xcb";
           NIXOS_OZONE_WL = "1";
-          FLAKE_PATH = user.home;
+          FLAKE_PATH = "/home/${user.userName}";
         };
         systemPackages = with pkgs; [
           gpu-screen-recorder
@@ -91,7 +91,7 @@
               };
             };
             folders = {
-              "${user.home}/sync" = {
+              "/home/${user.userName}/sync" = {
                 enable = true;
                 id = "sync";
                 devices = [ "myphone" ];
