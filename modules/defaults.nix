@@ -6,6 +6,8 @@
 
     schema.user.classes = lib.mkDefault [ "homeManager" ];
 
-    aspects.tux.nixos = { };
+    aspects.muhammadtalha.nixos = {
+      nixpkgs.config.allowUnfree = true;
+    };
   };
 }
